@@ -1,0 +1,200 @@
+.icon-task-in-progress {
+  background-color: #d1edf7;
+}
+
+.display-none {
+  display: none;
+}
+
+#main .one-task .title-buttons .icon-contours, body .icon-contours {
+  border: solid #FF00FF 1px;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+body .icon {
+  width: 15px;
+  height: 15px;
+  color: #FF00FF;
+  padding-top: 2px;
+}
+
+header #top__left .top-form__button .icon-contours:hover, #main .one-task .title-buttons .icon-contours:hover {
+  transform: scale(1.1, 1.1);
+  background-color: #d1edf7;
+  cursor: pointer;
+}
+
+#main .one-task__done:hover, #main .one-task__to-do:hover {
+  transform: scale(1.025, 1.025);
+}
+
+body {
+  font-family: "Raleway";
+}
+body h1, body h2 {
+  font-family: "Tourney";
+  letter-spacing: 2px;
+}
+body button {
+  font-family: "raleway";
+}
+body h1 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 4em;
+  letter-spacing: 5px;
+  color: #FFFFFF;
+}
+body h2 {
+  font-size: 2em;
+}
+#main {
+  background: rgb(209, 237, 247);
+  background: linear-gradient(180deg, rgba(209, 237, 247, 0.85) 0%, rgba(255, 233, 255, 0.85) 50%, rgba(209, 237, 247, 0.85) 100%);
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+}
+#main h2 {
+  color: #FF00FF;
+}
+#main__left {
+  width: 65%;
+  padding-right: 10px;
+}
+#main__right {
+  width: 35%;
+  padding-left: 10px;
+}
+#main .one-task {
+  width: 95%;
+  margin-bottom: 20px;
+  padding: 5px 10px 5px;
+  background-color: #FFFFFF;
+}
+#main .one-task__to-do {
+  box-shadow: 5px 5px 10px #19647e, -5px -5px 10px #19647e;
+  border-radius: 6px 0px 6px 6px;
+}
+#main .one-task__to-do:hover {
+  margin-left: 5px;
+}
+#main .one-task__done {
+  box-shadow: 5px -5px 10px #19647e, -5px 5px 10px #19647e;
+  border-radius: 0 6px 6px 6px;
+}
+#main .one-task__done:hover {
+  margin-right: 5px;
+}
+#main .one-task .title-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#main .one-task .title-buttons h3 {
+  color: #FF00FF;
+}
+#main .one-task p {
+  color: #19647e;
+}
+
+header {
+  background: #FF00FF;
+  background: linear-gradient(90deg, rgb(255, 0, 255) 0%, rgb(244, 5, 249) 6%, rgb(176, 34, 211) 25%, rgb(25, 100, 126) 100%);
+  padding-top: 20px;
+  color: #FFFFFF;
+}
+header #slogan {
+  text-align: center;
+  margin-top: 0;
+  font-family: "Raleway";
+  font-size: 1.5em;
+}
+header #top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+header #top__left {
+  width: 65%;
+  padding-right: 10px;
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+header #top__left .top-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 5px;
+}
+header #top__left .top-form__inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+header #top__left .top-form__inputs input {
+  width: 98%;
+  height: 25px;
+  border: solid 1px #FFFFFF;
+  border-radius: 6px;
+  margin-top: 5px;
+  color: #FF00FF;
+}
+header #top__left .top-form__inputs input::placeholder {
+  color: #19647e;
+}
+header #top__left .top-form__inputs .alert-message {
+  font-weight: bold;
+  margin-bottom: 3px;
+  margin-top: 0;
+}
+header #top__left .top-form__button .icon-contours {
+  border-color: #FFFFFF;
+}
+header #top__left .top-form__button .icon-contours:hover .icon {
+  color: #19647e;
+}
+header #top__left .top-form__button .icon {
+  color: #FFFFFF;
+}
+header #top__right {
+  width: 35%;
+  padding-left: 10px;
+  text-align: center;
+  border: #FFFFFF solid 1px;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+header #top .numbers {
+  text-align: center;
+}
+header #top .group-numbers {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+footer {
+  background: #19647e;
+  background: linear-gradient(90deg, rgb(25, 100, 126) 0%, rgb(112, 62, 175) 44%, rgb(199, 24, 224) 87%, rgb(255, 0, 255) 100%);
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 0.8em;
+}
+footer h2 {
+  margin: 0;
+  padding: 5px;
+}
+
+/*# sourceMappingURL=main.css.map */

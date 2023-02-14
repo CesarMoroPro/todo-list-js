@@ -1,0 +1,73 @@
+//^ MAIN */
+#main {
+        background: rgb(209,237,247);
+        background: $gradient3;
+        display: flex;
+        flex-direction: row;
+
+        padding: 0 10px;
+
+        h2 {
+                color: $fof;
+        }
+
+        &__left {
+                width: 65%;
+                padding-right: 10px;
+        }
+
+        &__right {
+                width: 35%;
+                padding-left: 10px;
+        }
+
+        .one-task {
+                width: 95%;
+                margin-bottom: 20px;
+                padding: 5px 10px 5px;
+                background-color: $white;
+
+                &__to-do {
+                        box-shadow: 5px 5px  10px $blue, -5px -5px 10px $blue;
+                        border-radius: 6px 0px 6px 6px;
+                }
+
+                &__to-do:hover {
+                       @extend %transform-tasks;
+                        margin-left: 5px;
+                }
+
+                &__done {
+                        box-shadow: 5px -5px  10px $blue, -5px 5px 10px $blue;
+                        border-radius: 0 6px 6px 6px;
+                }
+
+                &__done:hover {
+                        @extend %transform-tasks;
+                        margin-right: 5px;
+                }
+      
+                .title-buttons {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+        
+                        h3 {
+                                color: $fof;
+                        }
+
+                        .icon-contours {
+                                @extend %icons-contours-style;
+                        }
+
+                        .icon-contours:hover {
+                                @extend %icons-transform-style;
+                        }
+                }
+
+                p {
+                        color: $blue;
+                }
+        }
+}

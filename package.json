@@ -1,0 +1,16 @@
+{
+  "name": "02-en-attente",
+  "version": "1.0.0",
+  "description": "🇫🇷 Entrainement HTML / CSS sur un projet Todo List  🏴󠁧󠁢󠁥󠁮󠁧󠁿 HTML / CSS training with a Todo List project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sc": "sass ./scss/main.scss ./css/style.css",
+    "sw": "sass --watch ./scss:./css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.58.0"
+  }
+}

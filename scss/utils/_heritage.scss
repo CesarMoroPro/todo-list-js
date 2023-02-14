@@ -1,0 +1,22 @@
+%icons-contours-style {
+        border: solid $fof 1px;
+        border-radius: 3px;
+        background-color: transparent;
+}
+
+%icons-internal-style {
+        width: 15px;
+        height: 15px;
+        color: $fof;
+        padding-top: 2px;
+}
+
+%icons-transform-style {
+        transform: scale(1.1, 1.1);
+        background-color: $grey;
+        cursor: pointer;
+}
+
+%transform-tasks {
+        transform: scale(1.025, 1.025);
+}
