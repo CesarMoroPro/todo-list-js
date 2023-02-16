@@ -47,7 +47,21 @@ export function doneButtonFunction() {
                         let descriptionDeLaTache = nouvelleDivDeTacheTerminee.querySelector('.description');
                         descriptionDeLaTache.classList.add('display-none');
 
+                        //> 3 - Je change les icones d'interactions quand la tâche est en mode "terminée"
+                        /**
+                         * Premièrement, je récupère la div des icônes "en cours" et "exécutée" de la tâche ciblée (rappel : la tache parente)
+                         * J'applique simplement la classe "display-none" pour la masquer
+                         * Je ne la supprime pas puisque l'utilisateur pourra rebasculer la tâche en non-terminée si besoin
+                         * 
+                         * Deuxièmement, je récupère la div des icônes "basculer", "archiver", et "supprimer" de la tâche ciblée
+                         * Je supprime la classe "display-none" pour afficher cette div
+                         * Je ne supprime pas cette div car elle devra apparaitre quand l'utilisateur aura terminée cette tâche
+                         */
+                        let divDesIconesDeTacheAExecutee = tacheExecuteeParenteDuBoutonClique.querySelector('.icones-de-tache-a-executer');
+                        divDesIconesDeTacheAExecutee.classList.add('display-none');
 
+                        let divDesIconesDeTacheTerminee = tacheExecuteeParenteDuBoutonClique.querySelector('.icones-de-tache-terminee');
+                        divDesIconesDeTacheTerminee.classList.remove('display-none');
                 }
                 
 
