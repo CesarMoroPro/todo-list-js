@@ -69,9 +69,10 @@ header {
                                         }
         
                                         .icon-contours:hover {
-                                                @extend %icons-transform-style;
+                                                @extend %hover-icons-contours-style;
                                                 
                                                 .icon {
+                                                        @extend %hover-icons-internal-style;
                                                         color: $blue;
                                                 }
                                         }

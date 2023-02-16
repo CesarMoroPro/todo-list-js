@@ -1,5 +1,5 @@
 export function headerFunction() {
-        console.log("Ici on est dans le headerFunction.js");
+        //console.log("header.JS >> headerFunction chargée");
 
         //* Récupération des éléments utiles
         let inputTitreNouvelleTache = document.querySelector('#new-task-title');

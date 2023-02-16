@@ -1,22 +1,66 @@
+//^ Styles des icones
+// Ici, style appliqué au cadre de l'icone et son background
 %icons-contours-style {
-        border: solid $fof 1px;
+        border: solid 1px;
         border-radius: 3px;
         background-color: transparent;
+        padding: 0;
 }
 
+// Ici, style appliqué à l'icone en elle-même
 %icons-internal-style {
         width: 15px;
         height: 15px;
-        color: $fof;
         padding-top: 2px;
+        margin: 3px 7px;
 }
 
-%icons-transform-style {
-        transform: scale(1.1, 1.1);
+// Ici, style appliqué au cadre et au background AU SURVOL, définies en dehors de la section SURVOL car utilisée également par le _header.scss
+%hover-icons-contours-style {
         background-color: $grey;
         cursor: pointer;
 }
 
-%transform-tasks {
-        transform: scale(1.025, 1.025);
+// Ici, style appliqué à l'icone en elle-même AU SURVOL, définies en dehors de la section SURVOL car utilisée également par le _header.scss
+%hover-icons-internal-style {
+        transform: scale(1.5);
 }
+
+
+//^ Styles des tâches et de leurs composants AU SURVOL !
+// Il s'agit d'un gros bloc de CSS mais on est bien dans le cas d'un héritage donc sa place est bien ici
+%hover-tasks-background {
+        background: $gradient4;
+
+        .title-buttons {
+
+                h3 {
+                        color: $white;
+                }
+
+                .icon-contours {
+                        @extend %hover-icons-contours-style;
+                        background-color: transparent;
+                        border-color: $white
+                }
+
+                .icon {
+                        color: $white;
+                }
+
+                .icon-contours:hover {
+                        background-color: $white;
+
+                        .icon {
+                                @extend %hover-icons-internal-style;
+                                color: $fof;
+                        }
+                }
+        }
+
+        .description {
+                color: $white;
+        }
+}
+
+/* %hover-tasks */

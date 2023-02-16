@@ -21,6 +21,7 @@
                 padding-left: 10px;
         }
 
+        //^ Ici sont définies les propriétés CSS d'une tâche NON SURVOLÉE
         .one-task {
                 width: 95%;
                 margin-bottom: 20px;
@@ -32,21 +33,11 @@
                         border-radius: 6px 0px 6px 6px;
                 }
 
-                &__to-do:hover {
-                       @extend %transform-tasks;
-                        margin-left: 5px;
-                }
-
                 &__done {
                         box-shadow: 5px -5px  10px $blue, -5px 5px 10px $blue;
                         border-radius: 0 6px 6px 6px;
                 }
 
-                &__done:hover {
-                        @extend %transform-tasks;
-                        margin-right: 5px;
-                }
-      
                 .title-buttons {
                         display: flex;
                         flex-direction: row;
@@ -59,15 +50,32 @@
 
                         .icon-contours {
                                 @extend %icons-contours-style;
+                                border-color: $fof;
                         }
 
-                        .icon-contours:hover {
-                                @extend %icons-transform-style;
+                        .icon {
+                                color: $fof;
                         }
+
+
                 }
 
-                p {
+                .description {
                         color: $blue;
+                }
+        }
+
+
+        //^ Ici sont définies les propriétés CSS d'une tâche AU SURVOL
+        // Pour éviter les répétitions à cause des différents éléments survolés, j'utilise l'héritage
+        .one-task {
+                
+                &__to-do:hover {
+                       @extend %hover-tasks-background;
+                }
+
+                &__done:hover {
+                        @extend %hover-tasks-background;
                 }
         }
 }
