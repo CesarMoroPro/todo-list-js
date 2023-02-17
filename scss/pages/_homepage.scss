@@ -95,12 +95,7 @@
         }
 
         //^ Ici sont définies les propriétés CSS d'une tâche EN COURS DE SUPPRESSION
-        // Pour que le style appliqué soit celui d'une tâche survolée
         .one-task__done-confirmation-suppression {
-                @extend %confirmation-suppression;
-        }
-
-        .one-task__done-confirmation-suppression:hover {
                 @extend %hover-confirmation-suppression;
         }
 }

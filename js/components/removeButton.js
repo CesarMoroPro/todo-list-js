@@ -8,8 +8,10 @@ export function removeButtonFunction() {
         //* Fonction de traitement
         function supprimerLaTache(paramBoutonSupprimer){
                 
-                //> Je récupère la tâche parente du bouton de suppression cliqué
+                //> Je récupère la tâche parente entière du bouton de suppression cliqué
                 let tacheCourante = paramBoutonSupprimer.currentTarget.parentNode.parentNode.parentNode.parentNode;
+                //> Je récupère le contenu normal de la tâche courante
+                let contenuNormal = tacheCourante.querySelector('.tache-contenu-normal');
 
                 //> Je supprime cette tâche
                 /**
@@ -18,11 +20,9 @@ export function removeButtonFunction() {
                  * Je veux que la demande de confirmation apparaisse dans la tâche elle-même, en floutant le contenu habituel
                  * et en s'implémentant par dessus.
                  * 
-                 * Récupérer le contenu de la tâche
-                 * [En HTML] : englober tout le contenu dans une div
-                 * Ici en JS, lui assigner une classe qui gère le flou et le background coloré de manière fixe
-                 * [En HTML] : Créer une div pour permettre de préparer le message de confirmation
-                 * [En HTML] : Masquer cette div par défaut avec display-none
+                 * Ici en JS, appliquer un display-none au contenu normal de la tache courante
+                 * 
+                 * [En HTML] : Créer une div pour permettre de préparer le message de confirmation en display-none
                  * [en HTML] : elle contient un texte et deux boutons "oui" et "non"
                  * Ici en JS, supprimer le display-none de la div de message de confrmation
                  * 
@@ -33,8 +33,25 @@ export function removeButtonFunction() {
                  *              -> réassigne la classe display-none sur le message de confirmation
                  *              -> et retire la classe floue du contenu de la tâche
                  */
-                //> 1 - Modifier le background de la tâche courante
+                //> 1 - Modifier le background de la tâche courante ENTIÈRE pour le mettre en "couleur fixes" (aux couleurs du survol)
                 tacheCourante.classList.add('one-task__done-confirmation-suppression');
+
+                //> 2 - Masquer la div de contenu normal de la tâche
+                contenuNormal.classList.add('display-none');
+
+                //> 3 - Afficher la div de demande de suppression
+                // Récupérer cette div 
+                let divDemandeDeSuppression = tacheCourante.querySelector('.demande-suppression');
+                // Supprimer le display-none de cette div
+                divDemandeDeSuppression.classList.remove('display-none');
+
+                //> 4 - Au clic sur "oui", supprimer définitivement la tâche
+                let ouiButton = divDemandeDeSuppression.querySelector('.confirmation');
+                ouiButton.addEventListener('click', () => {
+                        tacheCourante.remove();
+                })
+
+
         }
 
 

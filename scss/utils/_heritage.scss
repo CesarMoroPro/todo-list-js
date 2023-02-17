@@ -69,41 +69,56 @@
 
 
 //^ Style des tâches EN COURS DE SUPPRESSION
-%confirmation-suppression {
-        background: $gradient4;
-        filter: blur(0.25em);
-}
-
 %hover-confirmation-suppression {
-        .title-buttons {
-
-                h3 {
-                        color: $fof;
-                }
-
-                .icon-contours {
-
-                        border-color: $fof
-                }
-
-                .icon {
-                        color: $fof;
-                }
-
-                .icon-contours:hover {
-                        background-color: transparent;
-
-                        .icon {
-                                transform: none;
-                        }
-                }
+        background: $gradient4;
+        
+        .question {
+                color: $white;
         }
 
-        .afficher-masquer-description {
-                color: rgba($fof, 0.4);
-        }
+        .div-boutons-confirmation {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
 
-        .afficher-masquer-description:hover {
-                color: rgba($fof, 0.4);
+                %confirmation-ou-suppression {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: $white;
+                        text-decoration: underline;
+                        border: solid 1px $white;
+                        border-radius: 4px;
+                        width: 50px;
+                        height: 25px;
+                        margin: 15px;
+                }
+
+                %hover-confirmation-ou-suppression {
+                        text-decoration: none;
+                        cursor: pointer;
+                        background-color: $grey;
+                        color: $blue;
+                }
+
+                .confirmation {
+                        @extend %confirmation-ou-suppression;
+                }
+
+                .confirmation:hover {
+                        @extend %hover-confirmation-ou-suppression;
+                }
+
+                .annulation {
+                        @extend %confirmation-ou-suppression;
+                }
+
+                .annulation:hover {
+                        @extend %hover-confirmation-ou-suppression;
+                }
         }
 }
+
+
+
+

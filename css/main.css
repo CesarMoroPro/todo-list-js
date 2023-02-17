@@ -61,31 +61,33 @@ header #top__left .top-form__button .icon-contours:hover .icon, #main .one-task_
 
 #main .one-task__done-confirmation-suppression {
   background: linear-gradient(30deg, rgb(255, 0, 255) 0%, rgb(244, 5, 249) 6%, rgb(176, 34, 211) 25%, rgb(25, 100, 126) 100%);
-  filter: blur(0.25em);
 }
-
-#main .one-task__done-confirmation-suppression:hover .title-buttons h3 {
-  color: #FF00FF;
+#main .one-task__done-confirmation-suppression .question {
+  color: #FFFFFF;
 }
-#main .one-task__done-confirmation-suppression:hover .title-buttons .icon-contours {
-  border-color: #FF00FF;
+#main .one-task__done-confirmation-suppression .div-boutons-confirmation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-#main .one-task__done-confirmation-suppression:hover .title-buttons .icon {
-  color: #FF00FF;
+#main .one-task__done-confirmation-suppression .div-boutons-confirmation .annulation, #main .one-task__done-confirmation-suppression .div-boutons-confirmation .confirmation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  text-decoration: underline;
+  border: solid 1px #FFFFFF;
+  border-radius: 4px;
+  width: 50px;
+  height: 25px;
+  margin: 15px;
 }
-#main .one-task__done-confirmation-suppression:hover .title-buttons .icon-contours:hover {
-  background-color: transparent;
+#main .one-task__done-confirmation-suppression .div-boutons-confirmation .annulation:hover, #main .one-task__done-confirmation-suppression .div-boutons-confirmation .confirmation:hover {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #d1edf7;
+  color: #19647e;
 }
-#main .one-task__done-confirmation-suppression:hover .title-buttons .icon-contours:hover .icon {
-  transform: none;
-}
-#main .one-task__done-confirmation-suppression:hover .afficher-masquer-description {
-  color: rgba(255, 0, 255, 0.4);
-}
-#main .one-task__done-confirmation-suppression:hover .afficher-masquer-description:hover {
-  color: rgba(255, 0, 255, 0.4);
-}
-
 body {
   margin: 0 5px 0 5px;
   width: 100%;
