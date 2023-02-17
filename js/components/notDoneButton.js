@@ -1,6 +1,6 @@
 //* Ce fichier a le même fonctionnement que le fichier "doneButton.js"
 export function notDoneButtonFunction() {
-        console.log('notDoneButton.js >> notDoneButtonFuction chargée');
+        // console.log('notDoneButton.js >> notDoneButtonFuction chargée');
 
         //* Récupération des éléments utiles
         // Tous les boutons "Rebasculer la tâche en non-terminée"
