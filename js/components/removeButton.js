@@ -9,7 +9,7 @@ export function removeButtonFunction() {
         function supprimerLaTache(paramBoutonSupprimer){
                 
                 //> Je récupère la tâche parente du bouton de suppression cliqué
-                let tacheCourante = paramBoutonSupprimer.currentTarget.parentNode.parentNode.parentNode;
+                let tacheCourante = paramBoutonSupprimer.currentTarget.parentNode.parentNode.parentNode.parentNode;
 
                 //> Je supprime cette tâche
                 /**
@@ -20,7 +20,7 @@ export function removeButtonFunction() {
                  * 
                  * Récupérer le contenu de la tâche
                  * [En HTML] : englober tout le contenu dans une div
-                 * Lui assigner une classse floue
+                 * Ici en JS, lui assigner une classe qui gère le flou et le background coloré de manière fixe
                  * [En HTML] : Créer une div pour permettre de préparer le message de confirmation
                  * [En HTML] : Masquer cette div par défaut avec display-none
                  * [en HTML] : elle contient un texte et deux boutons "oui" et "non"
@@ -33,10 +33,8 @@ export function removeButtonFunction() {
                  *              -> réassigne la classe display-none sur le message de confirmation
                  *              -> et retire la classe floue du contenu de la tâche
                  */
-                //> 1 - Récupérer le contenu de la tâche mais pas la tâche elle-même
-                let contenuDeLaTache = paramBoutonSupprimer.currentTarget.parentNode.parentNode;
-                let contenu = paramBoutonSupprimer.currentTarget.parentNode.parentNode.parentNode;
-                tacheCourante.classList.add('display-blur');
+                //> 1 - Modifier le background de la tâche courante
+                tacheCourante.classList.add('one-task__done-confirmation-suppression');
         }
 
 

@@ -66,3 +66,44 @@
                 color: $white;
         }
 }
+
+
+//^ Style des tâches EN COURS DE SUPPRESSION
+%confirmation-suppression {
+        background: $gradient4;
+        filter: blur(0.25em);
+}
+
+%hover-confirmation-suppression {
+        .title-buttons {
+
+                h3 {
+                        color: $fof;
+                }
+
+                .icon-contours {
+
+                        border-color: $fof
+                }
+
+                .icon {
+                        color: $fof;
+                }
+
+                .icon-contours:hover {
+                        background-color: transparent;
+
+                        .icon {
+                                transform: none;
+                        }
+                }
+        }
+
+        .afficher-masquer-description {
+                color: rgba($fof, 0.4);
+        }
+
+        .afficher-masquer-description:hover {
+                color: rgba($fof, 0.4);
+        }
+}
