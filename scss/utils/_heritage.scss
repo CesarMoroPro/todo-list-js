@@ -58,9 +58,11 @@
                 }
         }
 
+        .afficher-masquer-description {
+                color: rgba($white, 0.4);
+        }
+
         .description {
                 color: $white;
         }
 }
-
-/* %hover-tasks */

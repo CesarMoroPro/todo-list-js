@@ -52,11 +52,13 @@ header #top__left .top-form__button .icon-contours:hover .icon, #main .one-task_
 #main .one-task__done:hover .title-buttons .icon-contours:hover .icon, #main .one-task__to-do:hover .title-buttons .icon-contours:hover .icon {
   color: #FF00FF;
 }
+#main .one-task__done:hover .afficher-masquer-description, #main .one-task__to-do:hover .afficher-masquer-description {
+  color: rgba(255, 255, 255, 0.4);
+}
 #main .one-task__done:hover .description, #main .one-task__to-do:hover .description {
   color: #FFFFFF;
 }
 
-/* %hover-tasks */
 body {
   margin: 0 5px 0 5px;
   width: 100%;
@@ -127,8 +129,21 @@ body h2 {
 #main .one-task .title-buttons .icon {
   color: #FF00FF;
 }
+#main .one-task .afficher-masquer-description {
+  width: 200px;
+  color: rgba(255, 0, 255, 0.4);
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.75em;
+  margin: 0;
+}
+#main .one-task .afficher-masquer-description:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+}
 #main .one-task .description {
   color: #19647e;
+  margin-top: 5px;
 }
 header {
   background: #FF00FF;

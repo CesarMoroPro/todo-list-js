@@ -60,8 +60,23 @@
 
                 }
 
+                .afficher-masquer-description {
+                        width: 200px;
+                        color: rgba($fof, 0.4);
+                        cursor: pointer;
+                        text-decoration: underline;
+                        font-size: 0.75em;
+                        margin: 0;
+                }
+
+                .afficher-masquer-description:hover {
+                        text-decoration: none;
+                        color: rgba($white, 0.75);
+                }
+
                 .description {
                         color: $blue;
+                        margin-top: 5px;
                 }
         }
 
