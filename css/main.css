@@ -10,6 +10,10 @@
   display: none;
 }
 
+.display-blur {
+  filter: blur(0.5em);
+}
+
 #main .one-task .title-buttons .icon-contours, body .icon-contours {
   border: solid 1px;
   border-radius: 3px;

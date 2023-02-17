@@ -15,7 +15,7 @@ export function notDoneButtonFunction() {
                  */
 
                  // Je commence par récupérer la tâche associée au bouton cliqué
-                 let tacheAAnnulerParenteDuBoutonClique = paramBoutonAnnulerTache.currentTarget.parentNode.parentNode.parentNode;
+                 let tacheAAnnulerParenteDuBoutonClique = paramBoutonAnnulerTache.currentTarget.parentNode.parentNode.parentNode.parentNode;
 
                 //> 1 -Je crée la nouvelle div dans la section "à exécuter" pour inclure la tache à rebasculer
                 // Je crée une nouvelle div pour inclure le contenu de la div à basculer

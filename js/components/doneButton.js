@@ -14,7 +14,7 @@ export function doneButtonFunction() {
                  */
 
                 // Je récupère la tâche associée au bouton cliqué (troisième parent du bouton)
-                let tacheExecuteeParenteDuBoutonClique  = paramBoutonDeTacheExecutee.currentTarget.parentNode.parentNode.parentNode;
+                let tacheExecuteeParenteDuBoutonClique  = paramBoutonDeTacheExecutee.currentTarget.parentNode.parentNode.parentNode.parentNode;
                 
                 /**
                  * > Je veux déplacer cette tâche de la section "à exécuter" vers la section "terminées"

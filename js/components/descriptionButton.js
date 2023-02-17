@@ -1,5 +1,5 @@
 export function afficherOuMasquerLaDescriptiontache() {
-        console.log('descriptionButton.js >> afficherOuMasquerLaDescriptiontache chargée')
+        //console.log('descriptionButton.js >> afficherOuMasquerLaDescriptiontache chargée')
 
         //* Récupération des éléments utiles
         // Toutes les boutons "Afficher - masquer la description"
