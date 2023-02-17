@@ -17,21 +17,21 @@ export function removeButtonFunction() {
                 /**
                  * Ce mode de suppression ne conserve aucune trace de la tâche (contrairement au composant d'archivage)
                  * Il faut donc demander une confirmation à l'utilisateur pour valider la suppression
-                 * Je veux que la demande de confirmation apparaisse dans la tâche elle-même, en floutant le contenu habituel
-                 * et en s'implémentant par dessus.
+                 * Je veux que la demande de confirmation apparaisse dans la tâche elle-même
                  * 
-                 * Ici en JS, appliquer un display-none au contenu normal de la tache courante
-                 * 
-                 * [En HTML] : Créer une div pour permettre de préparer le message de confirmation en display-none
+                 * [En HTML] : Créer une div (class="demande-suppression") pour permettre de préparer le message de confirmation, en display-none
                  * [en HTML] : elle contient un texte et deux boutons "oui" et "non"
-                 * Ici en JS, supprimer le display-none de la div de message de confrmation
+                 * 
+                 * Puis en JS, appliquer un display-none au contenu normal de la tache courante
+                 * en JS, supprimer le display-none de la div qui demande à l'utilisateur de confirmer la suppression
                  * 
                  * Événement :
                  *      -> clic sur "oui" :
                  *              -> supprime la tâche définitivement
                  *      -> clic sur "non" :
-                 *              -> réassigne la classe display-none sur le message de confirmation
-                 *              -> et retire la classe floue du contenu de la tâche
+                 *              -> réassigne la classe display-none sur la div de demande de confirmation de suppression
+                 *              -> et retire la classe display-none du contenu de la tâche
+                 *              -> et retire la classe one-task__done-confirmation-suppression de la tâche complète
                  */
                 //> 1 - Modifier le background de la tâche courante ENTIÈRE pour le mettre en "couleur fixes" (aux couleurs du survol)
                 tacheCourante.classList.add('one-task__done-confirmation-suppression');
@@ -54,13 +54,12 @@ export function removeButtonFunction() {
                         tacheCourante.remove();
                         // J'affiche un message de confirmation de la suppression pendant 3 secondes
                         let messageConfirmationSuppression = document.createElement('p');
-                        messageConfirmationSuppression.textContent = "La tâche a été définitivement supprimée."
+                        messageConfirmationSuppression.textContent = "La tâche a été définitivement supprimée.";
                         messageConfirmationSuppression.classList.add('message-de-confirmation-apres-suppression');
                         // J'intègre ce paragraphe en dessus de la section "#main__right .all-tasks"
-                        // Je récupère la section
-                        let sectionTachesTerminees = document.querySelector('#main__right .all-tasks');
-                        // J'intègre le message pendant 3 secondes
-                        sectionTachesTerminees.parentNode.appendChild(messageConfirmationSuppression);
+                        document.querySelector('#main__right .all-tasks').parentNode.appendChild(messageConfirmationSuppression);
+
+                        // Timer pour garder le message pendant 3 secondes
                         setInterval(() => {
                                 messageConfirmationSuppression.remove();
                         }, 3000);
@@ -75,7 +74,7 @@ export function removeButtonFunction() {
                         divDemandeDeSuppression.classList.add('display-none');
                         // Je réaffiche normalement le contenu de la tâche à ne pas supprimer
                         contenuNormal.classList.remove('display-none');
-                        // Je supprime la classe "one-task__done-confirmation-suppression" sur la tachet complète
+                        // Je supprime la classe "one-task__done-confirmation-suppression" sur la tâche complète
                         tacheCourante.classList.remove('one-task__done-confirmation-suppression');
                 })
 

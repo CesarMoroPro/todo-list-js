@@ -7,6 +7,7 @@ import { doneButtonFunction } from './js/components/doneButton.js';
 import { notDoneButtonFunction } from './js/components/notDoneButton.js';
 import { afficherOuMasquerLaDescriptiontache } from './js/components/descriptionButton.js';
 import { removeButtonFunction } from './js/components/removeButton.js';
+import { archiveButtonFunction } from './js/components/archiveButton.js';
 
 function goMonPetitJs() {
         
@@ -18,6 +19,7 @@ function goMonPetitJs() {
         doneButtonFunction();
         notDoneButtonFunction();
         removeButtonFunction();
+        archiveButtonFunction();
 
 }
 
