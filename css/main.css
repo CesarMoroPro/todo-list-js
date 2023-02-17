@@ -10,6 +10,15 @@
   display: none;
 }
 
+.message-de-confirmation-apres-suppression {
+  text-align: center;
+  border: solid 1px #006629;
+  border-radius: 4px;
+  background-color: rgba(0, 195, 16, 0.368627451);
+  padding: 5px;
+  color: #006629;
+}
+
 #main .one-task .title-buttons .icon-contours, body .icon-contours {
   border: solid 1px;
   border-radius: 3px;

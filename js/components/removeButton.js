@@ -46,9 +46,24 @@ export function removeButtonFunction() {
                 divDemandeDeSuppression.classList.remove('display-none');
 
                 //> 4 - Au clic sur "oui", supprimer définitivement la tâche
+                // Je récupère le bouton "oui"
                 let ouiButton = divDemandeDeSuppression.querySelector('.confirmation');
+                // "au clic, je déclenche une fonction"
                 ouiButton.addEventListener('click', () => {
+                        // Elle supprime la tâche courante entièrement
                         tacheCourante.remove();
+                        // J'affiche un message de confirmation de la suppression pendant 3 secondes
+                        let messageConfirmationSuppression = document.createElement('p');
+                        messageConfirmationSuppression.textContent = "La tâche a été définitivement supprimée."
+                        messageConfirmationSuppression.classList.add('message-de-confirmation-apres-suppression');
+                        // J'intègre ce paragraphe en dessus de la section "#main__right .all-tasks"
+                        // Je récupère la section
+                        let sectionTachesTerminees = document.querySelector('#main__right .all-tasks');
+                        // J'intègre le message pendant 3 secondes
+                        sectionTachesTerminees.parentNode.appendChild(messageConfirmationSuppression);
+                        setInterval(() => {
+                                messageConfirmationSuppression.remove();
+                        }, 3000);
                 })
 
 
