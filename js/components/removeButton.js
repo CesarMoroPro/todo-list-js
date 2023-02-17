@@ -48,7 +48,7 @@ export function removeButtonFunction() {
                 //> 4 - Au clic sur "oui", supprimer définitivement la tâche
                 // Je récupère le bouton "oui"
                 let ouiButton = divDemandeDeSuppression.querySelector('.confirmation');
-                // "au clic, je déclenche une fonction"
+                // Au clic, je déclenche une fonction
                 ouiButton.addEventListener('click', () => {
                         // Elle supprime la tâche courante entièrement
                         tacheCourante.remove();
@@ -66,6 +66,18 @@ export function removeButtonFunction() {
                         }, 3000);
                 })
 
+                //> 5 - Au clic sur "non", ne pas supprimer la tâche et la réaffchier
+                // Je récupère le bouton "non"
+                let nonButton = divDemandeDeSuppression.querySelector('.annulation');
+                // Au clic, je déclenche une fonction
+                nonButton.addEventListener('click', () => {
+                        // Je masque la div de demande de confirmation à l'utilisateur
+                        divDemandeDeSuppression.classList.add('display-none');
+                        // Je réaffiche normalement le contenu de la tâche à ne pas supprimer
+                        contenuNormal.classList.remove('display-none');
+                        // Je supprime la classe "one-task__done-confirmation-suppression" sur la tachet complète
+                        tacheCourante.classList.remove('one-task__done-confirmation-suppression');
+                })
 
         }
 
