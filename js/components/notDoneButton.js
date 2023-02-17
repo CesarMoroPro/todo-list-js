@@ -36,6 +36,8 @@ export function notDoneButtonFunction() {
                 // Je récupère la div des icônes à afficher, je les affiche
                tacheAAnnulerParenteDuBoutonClique.querySelector('.icones-de-tache-a-executer').classList.remove('display-none');
 
+                 //> 4 - Je change le contenu du bouton "afficher - masquer la description"
+                 tacheAAnnulerParenteDuBoutonClique.querySelector('.afficher-masquer-description').textContent = "Masquer la description"
         }
 
 

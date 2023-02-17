@@ -56,6 +56,10 @@ export function doneButtonFunction() {
 
                 let divDesIconesDeTacheTerminee = tacheExecuteeParenteDuBoutonClique.querySelector('.icones-de-tache-terminee');
                 divDesIconesDeTacheTerminee.classList.remove('display-none');
+
+                //> 4 - Je change le contenu du bouton "afficher - masquer la description"
+                let boutonAfficherOuMasquerDescription = tacheExecuteeParenteDuBoutonClique.querySelector('.afficher-masquer-description');
+                boutonAfficherOuMasquerDescription.textContent = "Afficher la description"
         }
         
 
