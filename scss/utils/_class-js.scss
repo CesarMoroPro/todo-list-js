@@ -1,9 +1,5 @@
-.icon-task-in-progress {
-        background-color: $grey;
-}
-
 .task-in-progress {
-        background-color: red;
+        @extend %task-in-progress; 
 }
 
 .display-none {

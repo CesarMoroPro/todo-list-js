@@ -1,69 +1,63 @@
 export function taskInProgressButtonFunction() {
-        //console.log("taskInProgress.JS >> taskInProgressButtonFunction chargée");
+        console.log("taskInProgress.JS >> taskInProgressButtonFunction chargée");
 
        //* Récupération des éléments utiles
-      // Je récupère toutes les tâches sous forme de tableau exploitables avec forEach (donc querySelector, pas getElements !)
-       let tableauDesTaches                     = document.querySelectorAll('.one-task__to-do');
+      // Tous les boutons "en cours"
+      let tableauDesBoutonsEnCours = document.querySelectorAll('.en-cours');
 
-       //* Je crée des éléments utiles
-       /**
-        * Ici je crée une variable qui sera attribuée à l'état en cours on non d'une tâche
-        * Par défaut, toutes les tâches sont à l'arrêt, la variable aucuneTacheEnCours est donc vraie, donc initialisée à true
-        */
-        let aucuneTacheEnCours = true;
-
-       
        
         //* Fonctions de traitement pour les événements déclenchés
-        function changerEtatEnCoursDeLaTache(paramBoutonEnCours) {
-                let boutonEnCours = paramBoutonEnCours.target;
-                        console.log(boutonEnCours);
+        function changerEtatDeLaTache(paramBoutonEnCours) {
 
-                if (boutonEnCours.classList.contains('task-in-progress')){
-                        console.log('test')
+                // Je récupère le bouton "en cours" de la tâche courante
+                let boutonEnCours = paramBoutonEnCours.currentTarget;
+                // Je récupère la tâche courante
+                let tacheCourante = boutonEnCours.parentNode.parentNode.parentNode.parentNode;
+                // Je définis un booléen correspondant l'état "en cours" ou non de la tâche.
+                let tacheEnCours;
+
+                /**
+                *> Ici je gère le traitement lorsque le bouton "En Cours" est cliqué
+                * Condition : 
+                * -> premier passage : si tacheEnCours vaut undefined
+                *               -> changer état à en cours
+                *               -> changer la valeur de tacheEnCours à TRUE
+                * 
+                * 
+                * -> Si la tache cliquée n'est pas déjà en cours
+                *                -> Si une autre tâche est en cours :
+                *                               -> arrêter cette tâche
+                *                               -> lancer la tâche cliquée
+                *               -> Sinon, si aucune autre tâche est déjà en cours :
+                *                                -> lancer la tâche cliquée
+                * -> Si la tâche cliquée est déjà en cours :
+                *                               -> arrêter cette tâche
+                */
+
+                if(tacheEnCours != true) {
+                        tacheCourante.classList.add('task-in-progress');
+                        tacheEnCours = true;
+                        console.log(tacheEnCours)
+                }
+                else if(tacheEnCours == true) {
+                        // Je récupère la tâche qui contient la classe "task-in-progress"
+                        let tacheDejaEnCours = document.querySelector('.task-in-progress');
+                        // Je supprime cette classe de cette tâche
+                        tacheDejaEnCours.classList.remove('task-in-progress')
+                        // Je passe la variable tacheEnCours à FALSE
+                        tacheEnCours = false;
                 }
 
         }
 
 
 
-       //* Je crée un événement :
-       /**
-        * Pour chaque tache du tableauDesTaches
-        * Je récupère son bouton "En Cours".
-        * Puis au clic sur ce bouton,
-        * Je déclenche la fonction qui doit prendre en paramètre le bouton qui a été cliqué et sa tâche correspondante.
-        * Pour faire ça, je dois les stocker dans une variable au préalable
-        */
-       tableauDesTaches.forEach(uneTachePrecise => {
-                let tableauDesBoutonsEnCours = uneTachePrecise.querySelector('button.en-cours');
+       //* Événement au clic sur un bouton de "tâche en cours"
+        tableauDesBoutonsEnCours.forEach(boutonDeTacheEnCours => {
+                boutonDeTacheEnCours.addEventListener('click', changerEtatDeLaTache, boutonDeTacheEnCours);
+        })
 
-                tableauDesBoutonsEnCours.addEventListener('click', changerEtatEnCoursDeLaTache, tableauDesBoutonsEnCours);
-       })
-
-       /**
-        * Au clic sur le bouton "boutonEnCours" d'une tâche, une fonction de traitement se déclenche
-        * Il s'agit d'une liste d'éléments, donc boucle !
-        */
-        // tableauDesBoutonsEnCours.forEach(justeUnBoutonEnCoursEtRienDePlus => {
-        //         let leBoutonQuiEstClique = justeUnBoutonEnCoursEtRienDePlus;
-        //         justeUnBoutonEnCoursEtRienDePlus.addEventListener('click', changerEtatDeLaTacheCliquee, leBoutonQuiEstClique);
-        // });
-
-
-
-        // /**
-        //         * Ici je gère le traitement lorsque le bouton "En Cours" est cliqué
-        //         * Condition : 
-        //         * -> Si la tache cliquée n'est pas déjà en cours 
-        //         *                -> Si une autre tâche est en cours :
-        //         *                               -> arrêter cette tâche
-        //         *                               -> lancer la tâche cliquée
-        //         *               -> Sinon, si aucune autre tâche est déjà en cours :
-        //         *                                -> lancer la tâche cliquée
-        //         * -> Si la tâche cliquée est déjà en cours :
-        //         *                               -> arrêter cette tâche
-        //         */
+        
         // function changerEtatDeLaTacheCliquee(paramBoutonQuiEstClique) {
 
 

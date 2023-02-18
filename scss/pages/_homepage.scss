@@ -51,6 +51,7 @@
                         .icon-contours {
                                 @extend %icons-contours-style;
                                 border-color: $fof;
+                                margin-bottom: 3px;
                         }
 
                         .icon {

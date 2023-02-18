@@ -1,5 +1,5 @@
 export function archiveButtonFunction() {
-        console.log('archiveButton.js >> archiveButtonFunction chargée');
+        //console.log('archiveButton.js >> archiveButtonFunction chargée');
 
         //* Récupération des éléments utiles
         // Tous les boutons "archiver"

@@ -68,6 +68,47 @@
 }
 
 
+//^ Style des tâches qui passent à l'état EN COURS
+%task-in-progress {
+        background: $gradient4 !important;
+
+        .title-buttons {
+                
+                h3 {
+                        color: $white !important;
+                }
+
+                .icon-contours {
+                        border-color: $white !important;
+                }
+
+                .icon {
+                        color: $white !important;
+                }
+
+                .en-cours {
+                        background-color: $grey !important;
+
+                        .icon {
+                                color: $fof !important;
+                        }
+                }
+        }
+
+        .afficher-masquer-description {
+                color: rgba($white, 0.4) !important;
+        }
+
+        .afficher-masquer-description:hover {
+                color: rgba($white, 0.75) !important;
+        }
+
+        .description {
+                color: $white !important;
+        }
+}
+
+
 //^ Style des tâches EN COURS DE SUPPRESSION
 %hover-confirmation-suppression {
         background: $gradient4;
