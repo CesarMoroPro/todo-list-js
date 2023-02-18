@@ -1,3 +1,6 @@
+//^ Import du calcul de nombre de tâches dans le header
+import { statistiquesDesTachesDansLeHeader } from '../../layouts/header/statisticsTasks.js';
+
 export function removeButtonFunction() {
 
         //* Je récupère les éléments utiles
@@ -52,6 +55,10 @@ export function removeButtonFunction() {
                 ouiButton.addEventListener('click', () => {
                         // Elle supprime la tâche courante entièrement
                         tacheCourante.remove();
+
+                        //> 5 - Je mets à jour le nombre de tâches dans le header
+                        statistiquesDesTachesDansLeHeader();
+                        
                         // J'affiche un message de confirmation de la suppression pendant 3 secondes
                         let messageConfirmationSuppression = document.createElement('p');
                         messageConfirmationSuppression.textContent = "La tâche a été définitivement supprimée.";

@@ -1,4 +1,6 @@
-//* Ce fichier a le même fonctionnement que le fichier "doneButton.js"
+//^ Import du calcul de nombre de tâches dans le header
+import { statistiquesDesTachesDansLeHeader } from '../../layouts/header/statisticsTasks.js';
+
 export function notDoneButtonFunction() {
         // console.log('notDoneButton.js >> notDoneButtonFuction chargée');
 
@@ -25,6 +27,9 @@ export function notDoneButtonFunction() {
                 // Puis je récupère la section des tâches non exécutées pour y inclure ma div nouvellement créée
                 let sectionDesTachesAExecuter = document.querySelector('#main__left .all-tasks');
                 sectionDesTachesAExecuter.appendChild(nouvelleDivDeTacheAExecuter);
+
+                //> 5 - Je mets à jour le nombre de tâches dans le header
+                statistiquesDesTachesDansLeHeader();
 
                 //> 2 - Je fais apparaitre la description de la tâche
                 nouvelleDivDeTacheAExecuter.querySelector('.description').classList.remove('display-none');

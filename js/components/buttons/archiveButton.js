@@ -1,3 +1,6 @@
+//^ Import du calcul de nombre de tâches dans le header
+import { statistiquesDesTachesDansLeHeader } from '../../layouts/header/statisticsTasks.js';
+
 export function archiveButtonFunction() {
         //console.log('archiveButton.js >> archiveButtonFunction chargée');
 
@@ -28,6 +31,11 @@ export function archiveButtonFunction() {
                 //> Je supprime la tache courante de la liste des tâches terminées
                 
                 sectionDesTachesTerminees.remove(tacheCourante);
+
+
+
+                //> Je mets à jour le nombre de tâches dans le header
+                statistiquesDesTachesDansLeHeader();
         }
 
 

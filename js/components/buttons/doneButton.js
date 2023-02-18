@@ -1,3 +1,6 @@
+//^ Import du calcul de nombre de tâches dans le header
+import { statistiquesDesTachesDansLeHeader } from '../../layouts/header/statisticsTasks.js';
+
 export function doneButtonFunction() {
         //console.log("doneButton.JS >> doneButtonFunction chargée");
 
@@ -36,6 +39,9 @@ export function doneButtonFunction() {
                 sectionDesTachesTerminees.appendChild(nouvelleDivDeTacheTerminee);
                 //! Ça fonctionne dès ce point, mais pourquoi ça supprime la div de la section "à exécuter" alors que je suis censé l'avoir dupliquée ? (approfondir la doc appendChild)
 
+                //> 5 - Je mets à jour le nombre de tâches dans le header
+                statistiquesDesTachesDansLeHeader();
+
                 //> 2 - J'ajoute la classe pour masquer la description
                 // Je récupère la description
                 let descriptionDeLaTache = nouvelleDivDeTacheTerminee.querySelector('.description');
@@ -60,6 +66,8 @@ export function doneButtonFunction() {
                 //> 4 - Je change le contenu du bouton "afficher - masquer la description"
                 let boutonAfficherOuMasquerDescription = tacheExecuteeParenteDuBoutonClique.querySelector('.afficher-masquer-description');
                 boutonAfficherOuMasquerDescription.textContent = "Afficher la description"
+
+
         }
         
 
