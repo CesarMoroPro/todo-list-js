@@ -1,11 +1,10 @@
-export function headerFunction() {
-        //console.log("header.JS >> headerFunction chargée");
+export function ajouterUneNouvelletache() {
+        // console.log('JS >> Layouts >> Header >> addNewTask.js chargée');
 
         //* Récupération des éléments utiles
         let inputTitreNouvelleTache = document.querySelector('#new-task-title');
         let boutonAjouterNouvelleTache = document.querySelector('#new-task-add');
         let alertMessage = document.querySelector('#alert-message');
-
 
 
         //* Fonctions concernant les inputs et le bouton de nouvelle tâche
@@ -37,8 +36,6 @@ export function headerFunction() {
                         console.log("tache envoyée");
                 }
         }
-
-
 
 
         //* Event Listeners

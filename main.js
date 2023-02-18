@@ -1,26 +1,18 @@
-//^ Imports des layouts
-import  { headerFunction } from './js/layouts/header.js';
+//^ Imports du header
+import  { allHeaderCategories } from './js/layouts/allHeadersImports.js';
 
-//^ Imports des components
-import { taskInProgressButtonFunction } from './js/components/taskInProgressButton.js';
-import { doneButtonFunction } from './js/components/doneButton.js';
-import { notDoneButtonFunction } from './js/components/notDoneButton.js';
-import { afficherOuMasquerLaDescriptiontache } from './js/components/descriptionButton.js';
-import { removeButtonFunction } from './js/components/removeButton.js';
-import { archiveButtonFunction } from './js/components/archiveButton.js';
+//^ Imports de tous les components
+import { allComponentsCategories } from './js/components/allComponentsImports.js';
+
 
 function goMonPetitJs() {
+        // console.log("le DOM est chargé");
         
-        console.log("le DOM est chargé");
-        
-        headerFunction();
-        afficherOuMasquerLaDescriptiontache();
-        taskInProgressButtonFunction();
-        doneButtonFunction();
-        notDoneButtonFunction();
-        removeButtonFunction();
-        archiveButtonFunction();
+        // Je fais appel aux modules de Header
+        allHeaderCategories();
 
+        // Je fais appel aux modules de composants
+        allComponentsCategories();
 }
 
 window.addEventListener('DOMContentLoaded', goMonPetitJs);
