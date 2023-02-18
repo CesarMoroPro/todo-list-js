@@ -19,27 +19,29 @@ export function taskInProgressButtonFunction() {
                 /**
                 *> Ici je gère le traitement lorsque le bouton "En Cours" est cliqué
                 * Condition : 
-                * -> premier passage : si tacheEnCours vaut undefined
-                *               -> changer état à en cours
+                * -> Si tacheEnCours vaut UNDEFINED ou FALSE (donc aucune tâche en cours)
+                *               -> Ajouter la classe 'task-in-progress' à la tâche cliquée
                 *               -> changer la valeur de tacheEnCours à TRUE
                 * 
+                * -> Sinon, si tacheEnCours vaut TRUE(donc une tâche est déjà en cours)
+                *               -> Si la tâche en cours est la tâche recliquée :
+                *                               -> Lui supprimer la classe 'task-in-progress'
+                *                               -> Changer la valeur de tacheEnCours à FALSE
                 * 
-                * -> Si la tache cliquée n'est pas déjà en cours
-                *                -> Si une autre tâche est en cours :
-                *                               -> arrêter cette tâche
-                *                               -> lancer la tâche cliquée
-                *               -> Sinon, si aucune autre tâche est déjà en cours :
-                *                                -> lancer la tâche cliquée
-                * -> Si la tâche cliquée est déjà en cours :
-                *                               -> arrêter cette tâche
+                *               -> Sinon, si la tâche en cours est une autre tâche que la tâche cliquée :
+                *                               -> Lui supprimer la classe 'task-in-progress'
+                *                               -> Ajouter cette classe à la tâche cliquée
+                *                               -> Changer la valeur de tacheEnCours à TRUE
                 */
 
-                if(tacheEnCours != true) {
+                if(tacheEnCours == undefined || tacheEnCours == false) {
+
                         tacheCourante.classList.add('task-in-progress');
                         tacheEnCours = true;
                         console.log(tacheEnCours)
-                }
-                else if(tacheEnCours == true) {
+
+                } else if(tacheEnCours == true) {
+                        
                         // Je récupère la tâche qui contient la classe "task-in-progress"
                         let tacheDejaEnCours = document.querySelector('.task-in-progress');
                         // Je supprime cette classe de cette tâche
@@ -56,44 +58,4 @@ export function taskInProgressButtonFunction() {
         tableauDesBoutonsEnCours.forEach(boutonDeTacheEnCours => {
                 boutonDeTacheEnCours.addEventListener('click', changerEtatDeLaTache, boutonDeTacheEnCours);
         })
-
-        
-        // function changerEtatDeLaTacheCliquee(paramBoutonQuiEstClique) {
-
-
-        //         tableauDesTaches.forEach(uneSeuleTache => {
-        //                 // Si la tache cliquée précisémment contient la class 'task-in-progress' ET qu'elle est déjà en cours
-        //                 if (uneSeuleTache.classList.contains('task-in-progress')) { // && cette tache est déjà en cours
-        //                         // Supprimer la classe 'task-in-progress' de cette tache précise
-
-        //                         // Et passer le booléen "aucuneTacheEnCours" à TRUE.
-        //                 }
-                        
-
-        //                 // Si une tâche contient la class 'task-in-progress',
-        //                 if (uneSeuleTache.classList.contains('task-in-progress')) {
-        //                         // Alors il faut la supprimer de la tache qui la contient
-        //                         // Puis l'ajouter sur la tache qui est cliquée
-        //                         //Et enfin passer le booléen "aucuneTacheEnCours" à FALSE
-                                
-
-
-        //                         aucuneTacheEnCours = false;
-        //                         uneSeuleTache.classList.remove('task-in-progress');
-
-        //                         console.log("ici")
-        //                 } else {
-        //                         aucuneTacheEnCours = true;
-        //                         uneSeuleTache.classList.add('task-in-progress');
-        //                 }
-        //         })
-
-        //         if (aucuneTacheEnCours) {
-        //                 console.log("coucou")
-        //                 aucuneTacheEnCours = false;
-
-        //         } else {
-
-        //         }
-        // }
 }
