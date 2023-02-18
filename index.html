@@ -33,7 +33,7 @@
 
                                 <form class="top-form" action="">
                                         <div class="top-form__inputs">
-                                                <p id="alert-message" class="alert-message display-none">Le titre de la tâche ne peut pas être vide</p>
+                                                <p id="alert-error-message" class="alert-error-message display-none">Le titre de la tâche ne peut pas être vide</p>
                                                 <input id="new-task-title" type="text" placeholder="Titre de la tâche">
                                                 <input id="new-task-excerpt" type="text" placeholder="Description courte de la tâche">
                                         </div>
@@ -67,6 +67,7 @@
 
         <main id="main">
                 <section id="main__left">
+                        <p id="alert-success-message" class="alert-success-message display-none">La tâche a été ajoutée à votre liste.</p>
                         <h2>Tâches à exécuter</h2>
 
                         <div class="all-tasks">

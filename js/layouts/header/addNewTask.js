@@ -1,10 +1,12 @@
+import { statistiquesDesTachesDansLeHeader } from "./statisticsTasks.js";
+
 export function ajouterUneNouvelletache() {
         // console.log('JS >> Layouts >> Header >> addNewTask.js chargée');
 
         //* Récupération des éléments utiles
         let inputTitreNouvelleTache = document.querySelector('#new-task-title');
         let boutonAjouterNouvelleTache = document.querySelector('#new-task-add');
-        let alertMessage = document.querySelector('#alert-message');
+        let alertMessage = document.querySelector('#alert-error-message');
 
 
         //* Fonctions concernant les inputs et le bouton de nouvelle tâche
@@ -28,12 +30,24 @@ export function ajouterUneNouvelletache() {
                  * Alors le message d'erreur est affiché (supprimer la classe display-none)
                  * Sinon, si le contenu vaut plus de 1 AU MOMENT DU CLIC BOUTON, 
                  * le message d'erreur doit être masqué
+                 * et un message de confirmation pour la nouvelle tâche apparaît pendant 3 secondes
                  */
                 if (inputTitreNouvelleTache.value.length == 0) {
                         alertMessage.classList.remove('display-none');
                 } else if (inputTitreNouvelleTache.value.length > 0) {
                         alertMessage.classList.add('display-none');
-                        console.log("tache envoyée");
+                        let alertSuccessMessage = document.querySelector('#alert-success-message');
+                        alertSuccessMessage.classList.remove('display-none');
+                        setInterval(() => {
+                                alertSuccessMessage.classList.add('display-none');
+                        }, 3000);
+                        sendTheNewTask();
+                }
+
+                //> 3 - Je crée la fonction qui crée la nouvelle tâche
+                function sendTheNewTask() {
+                        // console.log('Test dans la fonction sendTheNewTask()');
+
                 }
         }
 

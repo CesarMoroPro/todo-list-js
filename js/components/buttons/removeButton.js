@@ -58,11 +58,11 @@ export function removeButtonFunction() {
 
                         //> 5 - Je mets à jour le nombre de tâches dans le header
                         statistiquesDesTachesDansLeHeader();
-                        
+
                         // J'affiche un message de confirmation de la suppression pendant 3 secondes
                         let messageConfirmationSuppression = document.createElement('p');
                         messageConfirmationSuppression.textContent = "La tâche a été définitivement supprimée.";
-                        messageConfirmationSuppression.classList.add('alert-success');
+                        messageConfirmationSuppression.classList.add('alert-success-message');
                         // J'intègre ce paragraphe en dessus de la section "#main__right .all-tasks"
                         document.querySelector('#main__right .all-tasks').parentNode.appendChild(messageConfirmationSuppression);
 

@@ -2,7 +2,7 @@
   display: none;
 }
 
-.alert-success {
+.alert-success-message {
   text-align: center;
   border: solid 1px #006629;
   border-radius: 4px;
@@ -279,7 +279,7 @@ header #top__left .top-form__inputs input {
 header #top__left .top-form__inputs input::placeholder {
   color: #19647e;
 }
-header #top__left .top-form__inputs .alert-message {
+header #top__left .top-form__inputs .alert-error-message {
   font-weight: bold;
   margin-bottom: 3px;
   margin-top: 0;
