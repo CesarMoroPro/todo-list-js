@@ -1,0 +1,42 @@
+//! Ce fichier d'héritage a besoin de l'héritage des icônes
+@import '../icons/icons';
+
+//^ Styles des tâches et de leurs composants AU SURVOL !
+// Il s'agit d'un gros bloc de CSS mais on est bien dans le cas d'un héritage donc sa place est bien ici
+%hover-tasks-background {
+        background: $gradient4;
+
+        .title-buttons {
+
+                h3 {
+                        color: $white;
+                }
+
+                .icon-contours {
+                        @extend %hover-icons-contours-style;
+                        background-color: transparent;
+                        border-color: $white
+                }
+
+                .icon {
+                        color: $white;
+                }
+
+                .icon-contours:hover {
+                        background-color: $white;
+
+                        .icon {
+                                @extend %hover-icons-internal-style;
+                                color: $fof;
+                        }
+                }
+        }
+
+        .afficher-masquer-description {
+                color: rgba($white, 0.4);
+        }
+
+        .description {
+                color: $white;
+        }
+}

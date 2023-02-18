@@ -55,7 +55,7 @@ export function removeButtonFunction() {
                         // J'affiche un message de confirmation de la suppression pendant 3 secondes
                         let messageConfirmationSuppression = document.createElement('p');
                         messageConfirmationSuppression.textContent = "La tâche a été définitivement supprimée.";
-                        messageConfirmationSuppression.classList.add('message-de-confirmation-apres-suppression');
+                        messageConfirmationSuppression.classList.add('alert-success');
                         // J'intègre ce paragraphe en dessus de la section "#main__right .all-tasks"
                         document.querySelector('#main__right .all-tasks').parentNode.appendChild(messageConfirmationSuppression);
 

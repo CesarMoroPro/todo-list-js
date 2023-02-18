@@ -1,0 +1,27 @@
+//^ Styles des icones
+// Ici, style appliqué au cadre de l'icone et son background
+%icons-contours-style {
+        border: solid 1px;
+        border-radius: 3px;
+        background-color: transparent;
+        padding: 0;
+}
+
+// Ici, style appliqué à l'icone en elle-même
+%icons-internal-style {
+        width: 15px;
+        height: 15px;
+        padding-top: 2px;
+        margin: 3px 7px;
+}
+
+// Ici, style appliqué au cadre et au background AU SURVOL, définies en dehors de la section SURVOL car utilisée également par le _header.scss
+%hover-icons-contours-style {
+        background-color: $grey;
+        cursor: pointer;
+}
+
+// Ici, style appliqué à l'icone en elle-même AU SURVOL, définies en dehors de la section SURVOL car utilisée également par le _header.scss
+%hover-icons-internal-style {
+        transform: scale(1.5);
+}

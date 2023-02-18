@@ -2,7 +2,7 @@
   display: none;
 }
 
-.message-de-confirmation-apres-suppression {
+.alert-success {
   text-align: center;
   border: solid 1px #006629;
   border-radius: 4px;
@@ -32,32 +32,6 @@ header #top__left .top-form__button .icon-contours:hover, #main .one-task__done:
 
 header #top__left .top-form__button .icon-contours:hover .icon, #main .one-task__done:hover .title-buttons .icon-contours:hover .icon, #main .one-task__to-do:hover .title-buttons .icon-contours:hover .icon {
   transform: scale(1.5);
-}
-
-#main .one-task__done:hover, #main .one-task__to-do:hover {
-  background: linear-gradient(30deg, rgb(255, 0, 255) 0%, rgb(244, 5, 249) 6%, rgb(176, 34, 211) 25%, rgb(25, 100, 126) 100%);
-}
-#main .one-task__done:hover .title-buttons h3, #main .one-task__to-do:hover .title-buttons h3 {
-  color: #FFFFFF;
-}
-#main .one-task__done:hover .title-buttons .icon-contours, #main .one-task__to-do:hover .title-buttons .icon-contours {
-  background-color: transparent;
-  border-color: #FFFFFF;
-}
-#main .one-task__done:hover .title-buttons .icon, #main .one-task__to-do:hover .title-buttons .icon {
-  color: #FFFFFF;
-}
-#main .one-task__done:hover .title-buttons .icon-contours:hover, #main .one-task__to-do:hover .title-buttons .icon-contours:hover {
-  background-color: #FFFFFF;
-}
-#main .one-task__done:hover .title-buttons .icon-contours:hover .icon, #main .one-task__to-do:hover .title-buttons .icon-contours:hover .icon {
-  color: #FF00FF;
-}
-#main .one-task__done:hover .afficher-masquer-description, #main .one-task__to-do:hover .afficher-masquer-description {
-  color: rgba(255, 255, 255, 0.4);
-}
-#main .one-task__done:hover .description, #main .one-task__to-do:hover .description {
-  color: #FFFFFF;
 }
 
 .task-in-progress {
@@ -117,6 +91,55 @@ header #top__left .top-form__button .icon-contours:hover .icon, #main .one-task_
   background-color: #d1edf7;
   color: #19647e;
 }
+#main .one-task .title-buttons .icon-contours, body .icon-contours {
+  border: solid 1px;
+  border-radius: 3px;
+  background-color: transparent;
+  padding: 0;
+}
+
+body .icon {
+  width: 15px;
+  height: 15px;
+  padding-top: 2px;
+  margin: 3px 7px;
+}
+
+header #top__left .top-form__button .icon-contours:hover, #main .one-task__done:hover .title-buttons .icon-contours, #main .one-task__to-do:hover .title-buttons .icon-contours {
+  background-color: #d1edf7;
+  cursor: pointer;
+}
+
+header #top__left .top-form__button .icon-contours:hover .icon, #main .one-task__done:hover .title-buttons .icon-contours:hover .icon, #main .one-task__to-do:hover .title-buttons .icon-contours:hover .icon {
+  transform: scale(1.5);
+}
+
+#main .one-task__done:hover, #main .one-task__to-do:hover {
+  background: linear-gradient(30deg, rgb(255, 0, 255) 0%, rgb(244, 5, 249) 6%, rgb(176, 34, 211) 25%, rgb(25, 100, 126) 100%);
+}
+#main .one-task__done:hover .title-buttons h3, #main .one-task__to-do:hover .title-buttons h3 {
+  color: #FFFFFF;
+}
+#main .one-task__done:hover .title-buttons .icon-contours, #main .one-task__to-do:hover .title-buttons .icon-contours {
+  background-color: transparent;
+  border-color: #FFFFFF;
+}
+#main .one-task__done:hover .title-buttons .icon, #main .one-task__to-do:hover .title-buttons .icon {
+  color: #FFFFFF;
+}
+#main .one-task__done:hover .title-buttons .icon-contours:hover, #main .one-task__to-do:hover .title-buttons .icon-contours:hover {
+  background-color: #FFFFFF;
+}
+#main .one-task__done:hover .title-buttons .icon-contours:hover .icon, #main .one-task__to-do:hover .title-buttons .icon-contours:hover .icon {
+  color: #FF00FF;
+}
+#main .one-task__done:hover .afficher-masquer-description, #main .one-task__to-do:hover .afficher-masquer-description {
+  color: rgba(255, 255, 255, 0.4);
+}
+#main .one-task__done:hover .description, #main .one-task__to-do:hover .description {
+  color: #FFFFFF;
+}
+
 body {
   margin: 0 5px 0 5px;
   width: 100%;
