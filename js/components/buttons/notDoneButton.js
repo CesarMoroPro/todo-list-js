@@ -26,6 +26,7 @@ export function notDoneButtonFunction() {
 
                 // Puis je récupère la section des tâches non exécutées pour y inclure ma div nouvellement créée
                 let sectionDesTachesAExecuter = document.querySelector('#main__left .all-tasks');
+                console.log(sectionDesTachesAExecuter);
                 sectionDesTachesAExecuter.appendChild(nouvelleDivDeTacheAExecuter);
 
                 //> 5 - Je mets à jour le nombre de tâches dans le header

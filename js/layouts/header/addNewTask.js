@@ -1,7 +1,7 @@
 import { statistiquesDesTachesDansLeHeader } from "./statisticsTasks.js";
 
 export function ajouterUneNouvelletache() {
-        console.log('JS >> Layouts >> Header >> addNewTask.js chargée');
+        //console.log('JS >> Layouts >> Header >> addNewTask.js chargée');
 
         //* Récupération des éléments utiles
         let inputTitreNouvelleTache = document.querySelector('#new-task-title');

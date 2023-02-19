@@ -36,11 +36,12 @@ export function doneButtonFunction() {
                 // Maintenant, j'inclus cette div dans la section des "tâches terminées"
                 // Je récupère la section contenant les tâches déjà exécutées
                 let sectionDesTachesTerminees = document.querySelector('#main__right .all-tasks');
+                console.log(sectionDesTachesTerminees);
                 sectionDesTachesTerminees.appendChild(nouvelleDivDeTacheTerminee);
                 //! Ça fonctionne dès ce point, mais pourquoi ça supprime la div de la section "à exécuter" alors que je suis censé l'avoir dupliquée ? (approfondir la doc appendChild)
 
                 //> 5 - Je mets à jour le nombre de tâches dans le header
-                statistiquesDesTachesDansLeHeader();
+                statistiquesDesTachesDansLeHeader;
 
                 //> 2 - J'ajoute la classe pour masquer la description
                 // Je récupère la description
