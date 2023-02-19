@@ -14,7 +14,7 @@ function goMonPetitJs() {
         // Je fais appel aux modules de Header
         allHeaderCategories();
 
-        // Je fais appel aux modules de composants
+        // Je fais appel aux modules de Composants
         allComponentsCategories();
 
         // Je fais appel aux modules de Footer

@@ -1,7 +1,7 @@
 import { statistiquesDesTachesDansLeHeader } from "./statisticsTasks.js";
 
 export function ajouterUneNouvelletache() {
-        // console.log('JS >> Layouts >> Header >> addNewTask.js chargée');
+        console.log('JS >> Layouts >> Header >> addNewTask.js chargée');
 
         //* Récupération des éléments utiles
         let inputTitreNouvelleTache = document.querySelector('#new-task-title');
@@ -46,7 +46,7 @@ export function ajouterUneNouvelletache() {
 
                 //> 3 - Je crée la fonction qui crée la nouvelle tâche
                 function sendTheNewTask() {
-                        // console.log('Test dans la fonction sendTheNewTask()');
+                        console.log('Test dans la fonction sendTheNewTask()');
 
                 }
         }

@@ -1,5 +1,5 @@
 export function anneePourCopyright() {
-        console.log('copyright.js >> anneePourCopyright() chargée');
+        //console.log('copyright.js >> anneePourCopyright() chargée');
 
         //* Je crée les éléments à intégrer dans le code HTML
         let anneeAutomatique = new Date().getFullYear();

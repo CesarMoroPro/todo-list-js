@@ -10,11 +10,10 @@ export function statistiquesDesTachesDansLeHeader() {
         let emplacementStatTachesTerminees = document.getElementById('stat-done-tasks');
         // console.log(emplacementNombreTotalDeTaches, emplacementNombreDeTachesTerminees, emplacementStatTachesTerminees)
 
-        // Récupération du tableau de tâches à exécuter
+        // Tableau de tâches à exécuter
         let tableauDesTachesAExecuter = document.querySelectorAll('.one-task__to-do');
-        // Récupération du tableau de tâches déjà terminées
+        // Tableau de tâches déjà terminées
         let tableauDesTachesTerminees = document.querySelectorAll('.one-task__done');
-        // console.log(tableauDesTachesAExecuter, tableauDesTachesTerminees);
 
 
         //* Calculs
