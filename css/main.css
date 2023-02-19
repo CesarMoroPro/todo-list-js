@@ -141,7 +141,7 @@ header #top__left .top-form__button .icon-contours:hover .icon, #main .one-task_
 }
 
 body {
-  margin: 0 5px 0 5px;
+  margin: 0;
   width: 100%;
   font-family: "Raleway";
 }
@@ -312,6 +312,7 @@ header #top .group-numbers {
 }
 
 footer {
+  padding-bottom: 5px;
   background: #19647e;
   background: linear-gradient(90deg, rgb(25, 100, 126) 0%, rgb(112, 62, 175) 44%, rgb(199, 24, 224) 87%, rgb(255, 0, 255) 100%);
   color: #FFFFFF;
