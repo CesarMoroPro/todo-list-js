@@ -6,33 +6,26 @@ export function archiveButtonFunction() {
 
         //* Récupération des éléments utiles
         // Tous les boutons "archiver"
-        let tableauDesBoutonsArchiver = document.querySelectorAll('.archiver');
-
-
-        //* Création d'éléments utiles
-        /**
-         * Ici, je crée un tableau dans lequel je vais enregistrer les tâches qui sont archivées par l'utilisateur.
-         * Elles seront supprimées de la liste des tâches terminées mais seront disponibles dans le tableau.
-         * 
-         */
-        let tableauDesTachesArchivees = [];
-
+        let tableauDesBoutonsAArchiver = document.querySelectorAll('.archiver');
+        // La section des tâches terminées
         let sectionDesTachesTerminees = document.querySelector('#main__right .all-tasks');
+
+        //* Je crée un tableau pour archiver les tâches
+        let tableauArchivageDeTaches = [];
+
+
         //* Fonction de traitement pour archiver une tâche
         function archiverLaTache(paramBoutonArchiver) {
                 
-                //> Je récupère la tâche parente du bouton archiver
+                //> Je récupère la tâche parente du bouton "archiver"
                 let tacheCourante = paramBoutonArchiver.currentTarget.parentNode.parentNode.parentNode.parentNode;
                 
-                //> Je copie le contenu de la div complète dans le tableau des tâches archivées
-                tableauDesTachesArchivees.push(tacheCourante);
-                console.log(tableauDesTachesArchivees);
+                //> Je copie le contenu de la tâche complète dans le tableau des tâches archivées
+                tableauArchivageDeTaches.push(tacheCourante);
+                console.log(tableauArchivageDeTaches);
 
                 //> Je supprime la tache courante de la liste des tâches terminées
-                
-                sectionDesTachesTerminees.remove(tacheCourante);
-
-
+                tacheCourante.remove();
 
                 //> Je mets à jour le nombre de tâches dans le header
                 statistiquesDesTachesDansLeHeader();
@@ -40,7 +33,7 @@ export function archiveButtonFunction() {
 
 
         //* Événement au clic sur un bouton "archiver"
-        tableauDesBoutonsArchiver.forEach(boutonArchiver => {
+        tableauDesBoutonsAArchiver.forEach(boutonArchiver => {
                 boutonArchiver.addEventListener('click', archiverLaTache, boutonArchiver);
         })
 }
