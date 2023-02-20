@@ -21,34 +21,31 @@ export function doneButtonFunction() {
                 
                 /**
                  * > Je veux déplacer cette tâche de la section "à exécuter" vers la section "terminées"
-                 * Je commence par créer une nouvelle div dans la section "terminées" pour y inclure la tâche et son contenu
+                 * Je commence par récupérer la section "terminées" pour y inclure la tâche et son contenu
                  * 
                  * Ensuite, une fois dans la section "terminées", je devrai :
                  *      -> Cacher la description de la tâche
                  *      -> Changer les icônes
                  */
 
-                //> 1 - Je crée la nouvelle div dans la section "terminées" pour inclure ma tâche terminée 
-                // Je crée une nouvelle div de tâche terminée (donc sans oublier les class nécessaires !)
-                let nouvelleDivDeTacheTerminee = document.createElement('div');
-                // J'inclus dans cette div ma tache récupérée via l'argument dans l'event Listener
-                nouvelleDivDeTacheTerminee.appendChild(tacheExecuteeParenteDuBoutonClique);
-                // Maintenant, j'inclus cette div dans la section des "tâches terminées"
+                //> 1 - Je récupère la section "terminées" pour inclure ma tâche terminée 
                 // Je récupère la section contenant les tâches déjà exécutées
                 let sectionDesTachesTerminees = document.querySelector('#main__right .all-tasks');
-                console.log(sectionDesTachesTerminees);
-                sectionDesTachesTerminees.appendChild(nouvelleDivDeTacheTerminee);
+                // J'y inclus la tache courante cliquée
+                sectionDesTachesTerminees.appendChild(tacheExecuteeParenteDuBoutonClique);
                 //! Ça fonctionne dès ce point, mais pourquoi ça supprime la div de la section "à exécuter" alors que je suis censé l'avoir dupliquée ? (approfondir la doc appendChild)
 
-                //> 5 - Je mets à jour le nombre de tâches dans le header
-                statistiquesDesTachesDansLeHeader;
+                //> 2 - Je change la classe de la tache courante 'to-do' en 'done'
+                tacheExecuteeParenteDuBoutonClique.classList.remove('one-task__to-do');
+                tacheExecuteeParenteDuBoutonClique.classList.add('one-task__done');
 
-                //> 2 - J'ajoute la classe pour masquer la description
+                //> 3 - J'ajoute la classe pour masquer la description
                 // Je récupère la description
-                let descriptionDeLaTache = nouvelleDivDeTacheTerminee.querySelector('.description');
+                let descriptionDeLaTache = tacheExecuteeParenteDuBoutonClique.querySelector('.description');
                 descriptionDeLaTache.classList.add('display-none');
+                console.log(sectionDesTachesTerminees)
 
-                //> 3 - Je change les icones d'interactions quand la tâche est en mode "terminée"
+                //> 4 - Je change les icones d'interactions quand la tâche est en mode "terminée"
                 /**
                  * Premièrement, je récupère la div des icônes "en cours" et "exécutée" de la tâche ciblée (rappel : la tache parente)
                  * J'applique simplement la classe "display-none" pour la masquer
@@ -64,11 +61,12 @@ export function doneButtonFunction() {
                 let divDesIconesDeTacheTerminee = tacheExecuteeParenteDuBoutonClique.querySelector('.icones-de-tache-terminee');
                 divDesIconesDeTacheTerminee.classList.remove('display-none');
 
-                //> 4 - Je change le contenu du bouton "afficher - masquer la description"
+                //> 5 - Je change le contenu du bouton "afficher - masquer la description"
                 let boutonAfficherOuMasquerDescription = tacheExecuteeParenteDuBoutonClique.querySelector('.afficher-masquer-description');
                 boutonAfficherOuMasquerDescription.textContent = "Afficher la description"
 
-
+                //> 5 - Je mets à jour le nombre de tâches dans le header
+                statistiquesDesTachesDansLeHeader;
         }
         
 

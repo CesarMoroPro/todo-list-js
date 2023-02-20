@@ -19,30 +19,29 @@ export function notDoneButtonFunction() {
                  // Je commence par récupérer la tâche associée au bouton cliqué
                  let tacheAAnnulerParenteDuBoutonClique = paramBoutonAnnulerTache.currentTarget.parentNode.parentNode.parentNode.parentNode;
 
-                //> 1 -Je crée la nouvelle div dans la section "à exécuter" pour inclure la tache à rebasculer
-                // Je crée une nouvelle div pour inclure le contenu de la div à basculer
-                let nouvelleDivDeTacheAExecuter = document.createElement('div');
-                nouvelleDivDeTacheAExecuter.appendChild(tacheAAnnulerParenteDuBoutonClique);
-
-                // Puis je récupère la section des tâches non exécutées pour y inclure ma div nouvellement créée
+                //> 1 - Je récupère la section "à exécuter" pour inclure ma tâche à rebasculer
+                // Je récupère la section des tâches non exécutées pour y inclure ma div nouvellement créée
                 let sectionDesTachesAExecuter = document.querySelector('#main__left .all-tasks');
-                console.log(sectionDesTachesAExecuter);
-                sectionDesTachesAExecuter.appendChild(nouvelleDivDeTacheAExecuter);
+                sectionDesTachesAExecuter.appendChild(tacheAAnnulerParenteDuBoutonClique);
 
                 //> 5 - Je mets à jour le nombre de tâches dans le header
                 statistiquesDesTachesDansLeHeader();
 
-                //> 2 - Je fais apparaitre la description de la tâche
-                nouvelleDivDeTacheAExecuter.querySelector('.description').classList.remove('display-none');
+                //> 2 - Je change la classe de la tache courante 'done' en 'to-do'
+                tacheAAnnulerParenteDuBoutonClique.classList.replace('one-task__done', 'one-task__to-do');
+                console.log(sectionDesTachesAExecuter);
 
-                //> 3 - Je change les icônes de la div
+                //> 3 - Je fais apparaitre la description de la tâche
+                tacheAAnnulerParenteDuBoutonClique.querySelector('.description').classList.remove('display-none');
+
+                //> 4 - Je change les icônes de la div
                 // Je récupère la div des icones à masquer, je les masque
                 tacheAAnnulerParenteDuBoutonClique.querySelector('.icones-de-tache-terminee').classList.add('display-none');
 
                 // Je récupère la div des icônes à afficher, je les affiche
                tacheAAnnulerParenteDuBoutonClique.querySelector('.icones-de-tache-a-executer').classList.remove('display-none');
 
-                 //> 4 - Je change le contenu du bouton "afficher - masquer la description"
+                 //> 5 - Je change le contenu du bouton "afficher - masquer la description"
                  tacheAAnnulerParenteDuBoutonClique.querySelector('.afficher-masquer-description').textContent = "Masquer la description"
         }
 

@@ -5,6 +5,6 @@ import { statistiquesDesTachesDansLeHeader } from "./header/statisticsTasks.js";
 export function allHeaderCategories() {
         //console.log("header.JS >> headerFunction chargée");
 
-        ajouterUneNouvelletache();
         statistiquesDesTachesDansLeHeader();
+        ajouterUneNouvelletache();
 }
