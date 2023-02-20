@@ -66,7 +66,7 @@ export function doneButtonFunction() {
                 boutonAfficherOuMasquerDescription.textContent = "Afficher la description"
 
                 //> 5 - Je mets à jour le nombre de tâches dans le header
-                statistiquesDesTachesDansLeHeader;
+                statistiquesDesTachesDansLeHeader();
         }
         
 

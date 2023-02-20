@@ -24,9 +24,6 @@ export function notDoneButtonFunction() {
                 let sectionDesTachesAExecuter = document.querySelector('#main__left .all-tasks');
                 sectionDesTachesAExecuter.appendChild(tacheAAnnulerParenteDuBoutonClique);
 
-                //> 5 - Je mets à jour le nombre de tâches dans le header
-                statistiquesDesTachesDansLeHeader();
-
                 //> 2 - Je change la classe de la tache courante 'done' en 'to-do'
                 tacheAAnnulerParenteDuBoutonClique.classList.replace('one-task__done', 'one-task__to-do');
                 console.log(sectionDesTachesAExecuter);
@@ -42,7 +39,10 @@ export function notDoneButtonFunction() {
                tacheAAnnulerParenteDuBoutonClique.querySelector('.icones-de-tache-a-executer').classList.remove('display-none');
 
                  //> 5 - Je change le contenu du bouton "afficher - masquer la description"
-                 tacheAAnnulerParenteDuBoutonClique.querySelector('.afficher-masquer-description').textContent = "Masquer la description"
+                 tacheAAnnulerParenteDuBoutonClique.querySelector('.afficher-masquer-description').textContent = "Masquer la description";
+
+                //> 6 - Je mets à jour le nombre de tâches dans le header
+                statistiquesDesTachesDansLeHeader();
         }
 
 
