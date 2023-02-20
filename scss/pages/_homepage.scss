@@ -48,6 +48,10 @@
                                 color: $fof;
                         }
 
+                        .icones-de-tache-terminee {
+                                min-width: 102px;
+                        }
+
                         .icon-contours {
                                 @extend %icons-contours-style;
                                 border-color: $fof;

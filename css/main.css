@@ -204,6 +204,9 @@ body h2 {
 #main .one-task .title-buttons h3 {
   color: #FF00FF;
 }
+#main .one-task .title-buttons .icones-de-tache-terminee {
+  min-width: 102px;
+}
 #main .one-task .title-buttons .icon-contours {
   border-color: #FF00FF;
   margin-bottom: 3px;
