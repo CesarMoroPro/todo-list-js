@@ -2,7 +2,7 @@
 import  { allHeaderCategories } from './js/layouts/allHeadersImports.js';
 
 //^ Imports de tous les components
-import { allButtonsTasks } from './js/components/allButtonsImports.js'
+import { allButtonsTasks } from './js/components/allButtonsImports.js';
 
 //^ Imports du footer
 import { allFooterCategories } from './js/layouts/allFooterImports.js';

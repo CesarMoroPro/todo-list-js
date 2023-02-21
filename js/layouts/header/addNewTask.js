@@ -1,7 +1,5 @@
-import { statistiquesDesTachesDansLeHeader } from "./statisticsTasks.js";
-
 export function ajouterUneNouvelletache() {
-        //console.log('JS >> Layouts >> Header >> addNewTask.js chargée');
+        console.log('JS >> Layouts >> Header >> addNewTask.js chargée');
 
         //* Récupération des éléments utiles
         let inputTitreNouvelleTache = document.querySelector('#new-task-title');
@@ -33,20 +31,32 @@ export function ajouterUneNouvelletache() {
                  * et un message de confirmation pour la nouvelle tâche apparaît pendant 3 secondes
                  */
                 if (inputTitreNouvelleTache.value.length == 0) {
+
                         alertMessage.classList.remove('display-none');
+
                 } else if (inputTitreNouvelleTache.value.length > 0) {
+
                         alertMessage.classList.add('display-none');
                         let alertSuccessMessage = document.querySelector('#alert-success-message');
                         alertSuccessMessage.classList.remove('display-none');
+
                         setInterval(() => {
                                 alertSuccessMessage.classList.add('display-none');
                         }, 3000);
+
                         sendTheNewTask();
                 }
 
                 //> 3 - Je crée la fonction qui crée la nouvelle tâche
                 function sendTheNewTask() {
                         console.log('Test dans la fonction sendTheNewTask()');
+
+                        // Je récupère la valeur du titre de la nouvelle tâche
+                        let titreDeLaNouvelleTache = document.querySelector('#new-task-title').value;
+                        // Je récupère la valeur de la description de la nouvelle tâche
+                        let descriptionDeLaNouvelleTache = document.querySelector('#new-task-excerpt').value;
+
+                        //= J'en suis ici pour l'ajout d'une tâche !
 
                 }
         }

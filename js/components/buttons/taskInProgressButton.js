@@ -1,5 +1,5 @@
 export function taskInProgressButtonFunction() {
-        console.log("taskInProgress.JS >> taskInProgressButtonFunction chargée");
+        //console.log("taskInProgress.JS >> taskInProgressButtonFunction chargée");
 
        //* Récupération des éléments utiles
       // Tous les boutons "en cours"
