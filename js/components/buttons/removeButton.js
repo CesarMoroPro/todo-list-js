@@ -16,7 +16,7 @@ export function removeButtonFunction() {
                 //> Je récupère le contenu normal de la tâche courante
                 let contenuNormal = tacheCourante.querySelector('.tache-contenu-normal');
 
-                //> Je supprime cette tâche
+                //> Processus de suppression cette tâche
                 /**
                  * Ce mode de suppression ne conserve aucune trace de la tâche (contrairement au composant d'archivage)
                  * Il faut donc demander une confirmation à l'utilisateur pour valider la suppression
@@ -26,15 +26,9 @@ export function removeButtonFunction() {
                  * [en HTML] : elle contient un texte et deux boutons "oui" et "non"
                  * 
                  * Puis en JS, appliquer un display-none au contenu normal de la tache courante
-                 * en JS, supprimer le display-none de la div qui demande à l'utilisateur de confirmer la suppression
+                 * en JS toujours, supprimer le display-none de la div qui demande à l'utilisateur de confirmer la suppression
                  * 
-                 * Événement :
-                 *      -> clic sur "oui" :
-                 *              -> supprime la tâche définitivement
-                 *      -> clic sur "non" :
-                 *              -> réassigne la classe display-none sur la div de demande de confirmation de suppression
-                 *              -> et retire la classe display-none du contenu de la tâche
-                 *              -> et retire la classe one-task__done-confirmation-suppression de la tâche complète
+                 * Puis, événement conditionnel
                  */
                 //> 1 - Modifier le background de la tâche courante ENTIÈRE pour le mettre en "couleur fixes" (aux couleurs du survol)
                 tacheCourante.classList.add('one-task__done-confirmation-suppression');
@@ -48,35 +42,36 @@ export function removeButtonFunction() {
                 // Supprimer le display-none de cette div
                 divDemandeDeSuppression.classList.remove('display-none');
 
-                //> 4 - Au clic sur "oui", supprimer définitivement la tâche
-                // Je récupère le bouton "oui"
+                //> 4 - Traitement des réponses à la demande de confirmation pour supprimer la tâche
+                // Je récupère les boutons "oui" et "non"
                 let ouiButton = divDemandeDeSuppression.querySelector('.confirmation');
-                // Au clic, je déclenche une fonction
+                let nonButton = divDemandeDeSuppression.querySelector('.annulation');
+
+                // Au clic sur "OUI", je déclenche une fonction
                 ouiButton.addEventListener('click', () => {
-                        // Elle supprime la tâche courante entièrement
+
+                        // J'affiche le message de confirmation de la suppression pendant 3 secondes
+                        // Je récupère l'élément
+                        let successSuppressionMessage = document.querySelector('#alert-success-suppressionTask-message');
+                        // Je supprime la classe display-none
+                        successSuppressionMessage.classList.remove('display-none');
+
+                        // Timer pour masquer le message après 3 secondes
+                        setInterval(() => {
+                                successSuppressionMessage.classList.add('display-none');
+                        }, 3000);
+
+                        // Je supprime définitivement la tâche courante entièrement
                         tacheCourante.remove();
 
-                        //> 5 - Je mets à jour le nombre de tâches dans le header
+                        //^ 5 - Je mets à jour le nombre de tâches dans le header
                         statistiquesDesTachesDansLeHeader();
-
-                        // J'affiche un message de confirmation de la suppression pendant 3 secondes
-                        let messageConfirmationSuppression = document.createElement('p');
-                        messageConfirmationSuppression.textContent = "La tâche a été définitivement supprimée.";
-                        messageConfirmationSuppression.classList.add('alert-success-message');
-                        // J'intègre ce paragraphe en dessus de la section "#main__right .all-tasks"
-                        document.querySelector('#main__right .all-tasks').parentNode.appendChild(messageConfirmationSuppression);
-
-                        // Timer pour garder le message pendant 3 secondes
-                        setInterval(() => {
-                                messageConfirmationSuppression.remove();
-                        }, 3000);
                 })
 
-                //> 5 - Au clic sur "non", ne pas supprimer la tâche et la réaffchier
-                // Je récupère le bouton "non"
-                let nonButton = divDemandeDeSuppression.querySelector('.annulation');
-                // Au clic, je déclenche une fonction
+                // Au clic sur "non", j'annule la suppression demandée
+                // Donc ne pas supprimer la tâche et la réafficher
                 nonButton.addEventListener('click', () => {
+
                         // Je masque la div de demande de confirmation à l'utilisateur
                         divDemandeDeSuppression.classList.add('display-none');
                         // Je réaffiche normalement le contenu de la tâche à ne pas supprimer
@@ -84,7 +79,6 @@ export function removeButtonFunction() {
                         // Je supprime la classe "one-task__done-confirmation-suppression" sur la tâche complète
                         tacheCourante.classList.remove('one-task__done-confirmation-suppression');
                 })
-
         }
 
 

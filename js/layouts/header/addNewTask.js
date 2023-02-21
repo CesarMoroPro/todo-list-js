@@ -37,7 +37,7 @@ export function ajouterUneNouvelletache() {
                 } else if (inputTitreNouvelleTache.value.length > 0) {
 
                         alertMessage.classList.add('display-none');
-                        let alertSuccessMessage = document.querySelector('#alert-success-message');
+                        let alertSuccessMessage = document.querySelector('#alert-success-addTask-message');
                         alertSuccessMessage.classList.remove('display-none');
 
                         setInterval(() => {

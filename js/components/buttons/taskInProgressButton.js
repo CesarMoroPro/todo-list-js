@@ -53,7 +53,7 @@ export function taskInProgressButtonFunction() {
                         //console.log('Booléen phase 3 : ' + uneTacheEstEnCours)
 
                         tacheCourante.classList.add('task-in-progress');
-                        console.log(tacheCourante);
+                        //console.log(tacheCourante);
                         // Donc une tâche est maintenant en cours
                         uneTacheEstEnCours = true;
 
@@ -63,22 +63,22 @@ export function taskInProgressButtonFunction() {
                         
                         if(!tacheCourante.classList.contains('task-in-progress')){
                                 
-                                console.log('Booléen phase 6 : ' + uneTacheEstEnCours) 
+                                //console.log('Booléen phase 6 : ' + uneTacheEstEnCours) 
                                 
                                 laTacheQuiEstDejaEnCours.classList.remove('task-in-progress');
-                                console.log(tacheCourante);
+                                //console.log(tacheCourante);
                                 tacheCourante.classList.add('task-in-progress');
                                 // Et le booléen reste à true puisqu'une autre tâche est cliquée
 
-                                console.log('Booléen phase 7 : ' + uneTacheEstEnCours);
+                                //console.log('Booléen phase 7 : ' + uneTacheEstEnCours);
                         
                         } else if(tacheCourante.classList.contains('task-in-progress')) {
 
-                                console.log('Booléen phase 8 : ' + uneTacheEstEnCours);
-                                console.log(tacheCourante)
+                                //console.log('Booléen phase 8 : ' + uneTacheEstEnCours);
+                                //console.log(tacheCourante)
 
                                 tacheCourante.classList.remove('task-in-progress');
-                                console.log('Booléen phase 9 : ' + uneTacheEstEnCours);
+                                //console.log('Booléen phase 9 : ' + uneTacheEstEnCours);
                                 // Ici, plus aucune tâche n 'est en cours, donc booléen sur false
                                 uneTacheEstEnCours = false;
                         }
