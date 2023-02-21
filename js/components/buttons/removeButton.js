@@ -1,3 +1,6 @@
+//^ Import de la fonction qui écoute le clic sur le bouton
+import { startFunctionEventListenerOnTasksButtons } from '../../utils/startFunctionEventListener.js';
+
 //^ Import du calcul de nombre de tâches dans le header
 import { statistiquesDesTachesDansLeHeader } from '../../layouts/header/statisticsTasks.js';
 
@@ -83,7 +86,10 @@ export function removeButtonFunction() {
 
 
         //* Événement attaché aux boutons de suppression d'une tâche
-        tableauDesBoutonsSuppression.forEach(unBoutonDeSuppression => {
-                unBoutonDeSuppression.addEventListener('click', supprimerLaTache, unBoutonDeSuppression);
-        })
+        // J'utilise la fonction créée dans les Utils JS
+        startFunctionEventListenerOnTasksButtons(tableauDesBoutonsSuppression, supprimerLaTache);
+
+        // tableauDesBoutonsSuppression.forEach(unBoutonDeSuppression => {
+        //         unBoutonDeSuppression.addEventListener('click', supprimerLaTache, unBoutonDeSuppression);
+        // })
 }

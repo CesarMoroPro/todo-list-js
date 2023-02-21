@@ -1,3 +1,6 @@
+//^ Import de la fonction qui écoute le clic sur le bouton
+import { startFunctionEventListenerOnTasksButtons } from '../../utils/startFunctionEventListener.js';
+
 //^ Import du calcul de nombre de tâches dans le header
 import { statistiquesDesTachesDansLeHeader } from '../../layouts/header/statisticsTasks.js';
 
@@ -47,8 +50,11 @@ export function notDoneButtonFunction() {
 
 
         //* Événement à détecter
-        tableauDesBoutonsBasculerTacheEnNonTerminee.forEach(boutonDeLaTacheAAnnuler => {
-                // L'élément retourné est un objet !
-                boutonDeLaTacheAAnnuler.addEventListener('click', rebasculerLaTacheCommeNonExecutee, boutonDeLaTacheAAnnuler);
-        })
+        // J'utilise la fonction créée dans les Utils JS
+        startFunctionEventListenerOnTasksButtons(tableauDesBoutonsBasculerTacheEnNonTerminee, rebasculerLaTacheCommeNonExecutee);
+
+        // tableauDesBoutonsBasculerTacheEnNonTerminee.forEach(boutonDeLaTacheAAnnuler => {
+        //         // L'élément retourné est un objet !
+        //         boutonDeLaTacheAAnnuler.addEventListener('click', rebasculerLaTacheCommeNonExecutee, boutonDeLaTacheAAnnuler);
+        // })
 }

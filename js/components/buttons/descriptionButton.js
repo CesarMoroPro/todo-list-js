@@ -1,3 +1,6 @@
+//^ Import de la fonction qui écoute le clic sur le bouton
+import { startFunctionEventListenerOnTasksButtons } from '../../utils/startFunctionEventListener.js';
+
 export function afficherOuMasquerLaDescriptionTache() {
         //console.log('descriptionButton.js >> afficherOuMasquerLaDescriptionTache chargée')
 
@@ -46,7 +49,10 @@ export function afficherOuMasquerLaDescriptionTache() {
 
 
         //* Événement, au clic sur un bouton "afficher ou masquer la description"
-        tableauDesBoutonsPourAfficherLaDescription.forEach(boutonAfficherOuMasquerDescription => {
-                boutonAfficherOuMasquerDescription.addEventListener('click', afficherOuMasquerDescription, boutonAfficherOuMasquerDescription);
-        })
+        // J'utilise la fonction créée dans les Utils JS
+        startFunctionEventListenerOnTasksButtons(tableauDesBoutonsPourAfficherLaDescription, afficherOuMasquerDescription);
+
+        // tableauDesBoutonsPourAfficherLaDescription.forEach(boutonAfficherOuMasquerDescription => {
+        //         boutonAfficherOuMasquerDescription.addEventListener('click', afficherOuMasquerDescription, boutonAfficherOuMasquerDescription);
+        // })
 }

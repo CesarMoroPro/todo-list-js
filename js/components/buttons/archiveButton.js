@@ -1,3 +1,6 @@
+//^ Import de la fonction qui écoute le clic sur le bouton
+import { startFunctionEventListenerOnTasksButtons } from '../../utils/startFunctionEventListener.js';
+
 //^ Import du calcul de nombre de tâches dans le header
 import { statistiquesDesTachesDansLeHeader } from '../../layouts/header/statisticsTasks.js';
 
@@ -33,7 +36,10 @@ export function archiveButtonFunction() {
 
 
         //* Événement au clic sur un bouton "archiver"
-        tableauDesBoutonsAArchiver.forEach(boutonArchiver => {
-                boutonArchiver.addEventListener('click', archiverLaTache, boutonArchiver);
-        })
+        // J'utilise la fonction créée dans les Utils JS
+        startFunctionEventListenerOnTasksButtons(tableauDesBoutonsAArchiver, archiverLaTache);
+
+        // tableauDesBoutonsAArchiver.forEach(boutonArchiver => {
+        //         boutonArchiver.addEventListener('click', archiverLaTache, boutonArchiver);
+        // })
 }

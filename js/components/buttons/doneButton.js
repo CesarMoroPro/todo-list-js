@@ -1,3 +1,6 @@
+//^ Import de la fonction qui écoute le clic sur le bouton
+import { startFunctionEventListenerOnTasksButtons } from '../../utils/startFunctionEventListener.js';
+
 //^ Import du calcul de nombre de tâches dans le header
 import { statistiquesDesTachesDansLeHeader } from '../../layouts/header/statisticsTasks.js';
 
@@ -71,8 +74,11 @@ export function doneButtonFunction() {
         
 
         //* Je crée un événement
-        tableauDesBoutonsTacheExecutee.forEach(boutonDeLaTacheExecutee => {
-                // NOTE : l'élément retourné est un objet. Il faudra l'exploiter comme tel dans la fonction de traitement
-                boutonDeLaTacheExecutee. addEventListener('click', marquerLaTacheCommeExecutee, boutonDeLaTacheExecutee);
-        })
+        // J'utilise la fonction créée dans les Utils JS
+        startFunctionEventListenerOnTasksButtons(tableauDesBoutonsTacheExecutee, marquerLaTacheCommeExecutee);
+
+        // tableauDesBoutonsTacheExecutee.forEach(boutonDeLaTacheExecutee => {
+        //         // NOTE : l'élément retourné est un objet. Il faudra l'exploiter comme tel dans la fonction de traitement
+        //         boutonDeLaTacheExecutee. addEventListener('click', marquerLaTacheCommeExecutee, boutonDeLaTacheExecutee);
+        // })
 }
