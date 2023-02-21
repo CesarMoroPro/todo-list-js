@@ -22,7 +22,7 @@ export function archiveButtonFunction() {
                 
                 //> Je copie le contenu de la tâche complète dans le tableau des tâches archivées
                 tableauArchivageDeTaches.push(tacheCourante);
-                console.log(tableauArchivageDeTaches);
+                //console.log(tableauArchivageDeTaches);
 
                 //> Je supprime la tache courante de la liste des tâches terminées
                 tacheCourante.remove();

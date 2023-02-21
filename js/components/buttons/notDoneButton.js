@@ -26,7 +26,7 @@ export function notDoneButtonFunction() {
 
                 //> 2 - Je change la classe de la tache courante 'done' en 'to-do'
                 tacheAAnnulerParenteDuBoutonClique.classList.replace('one-task__done', 'one-task__to-do');
-                console.log(sectionDesTachesAExecuter);
+                //console.log(sectionDesTachesAExecuter);
 
                 //> 3 - Je fais apparaitre la description de la tâche
                 tacheAAnnulerParenteDuBoutonClique.querySelector('.description').classList.remove('display-none');

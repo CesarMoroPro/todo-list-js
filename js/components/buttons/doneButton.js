@@ -43,7 +43,7 @@ export function doneButtonFunction() {
                 // Je récupère la description
                 let descriptionDeLaTache = tacheExecuteeParenteDuBoutonClique.querySelector('.description');
                 descriptionDeLaTache.classList.add('display-none');
-                console.log(sectionDesTachesTerminees)
+                //console.log(sectionDesTachesTerminees)
 
                 //> 4 - Je change les icones d'interactions quand la tâche est en mode "terminée"
                 /**

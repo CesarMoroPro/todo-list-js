@@ -1,9 +1,19 @@
 export function taskInProgressButtonFunction() {
-        //console.log("taskInProgress.JS >> taskInProgressButtonFunction chargée");
+        console.log("taskInProgress.JS >> taskInProgressButtonFunction chargée");
 
        //* Récupération des éléments utiles
       // Tous les boutons "en cours"
       let tableauDesBoutonsEnCours = document.querySelectorAll('.en-cours');
+      //console.log(tableauDesBoutonsEnCours); // renvoie une NodeList []
+
+        //* Je crée une variable qui servira à vérifier la condition "tâche en cours : oui ou non"
+        /**
+         * Je définis un booléen :
+         * Il doit être à TRUE si une tâche est en cours
+         * Et à FALSE si aucune tâche n'est en cours
+         */
+       let uneTacheEstEnCours;
+       //console.log('Booléen phase 1 : ' + uneTacheEstEnCours);
 
        
         //* Fonctions de traitement pour les événements déclenchés
@@ -11,51 +21,75 @@ export function taskInProgressButtonFunction() {
 
                 // Je récupère le bouton "en cours" de la tâche courante
                 let boutonEnCours = paramBoutonEnCours.currentTarget;
+                //console.log(boutonEnCours); // Renvoie le bouton "en-cours"
                 // Je récupère la tâche courante
                 let tacheCourante = boutonEnCours.parentNode.parentNode.parentNode.parentNode;
-                // Je définis un booléen correspondant l'état "en cours" ou non de la tâche.
-                let tacheEnCours;
+                //console.log(tacheCourante); // Renvoie la tâche correspondante au bouton cliqué
+                // Je récupère la tâche qui contient la classe "task-in-progress"
+                let laTacheQuiEstDejaEnCours = document.querySelector('.task-in-progress');
+
+                //console.log('Booléen phase 2 : ' + uneTacheEstEnCours);
 
                 /**
                 *> Ici je gère le traitement lorsque le bouton "En Cours" est cliqué
                 * Condition : 
-                * -> Si tacheEnCours vaut UNDEFINED ou FALSE (donc aucune tâche en cours)
+                * -> Si uneTacheEstEnCours vaut UNDEFINED ou FALSE (donc aucune tâche en cours)
                 *               -> Ajouter la classe 'task-in-progress' à la tâche cliquée
-                *               -> changer la valeur de tacheEnCours à TRUE
+                *               -> changer la valeur de uneTacheEstEnCours à TRUE
                 * 
-                * -> Sinon, si tacheEnCours vaut TRUE(donc une tâche est déjà en cours)
-                *               -> Si la tâche en cours est la tâche recliquée :
-                *                               -> Lui supprimer la classe 'task-in-progress'
-                *                               -> Changer la valeur de tacheEnCours à FALSE
+                * -> Sinon, si uneTacheEstEnCours vaut TRUE ET si la tache courante qui contient la classe 'task-in-progress' vaut la tache qui est déjà en cours qui contient la classe 'task-in-progress
                 * 
-                *               -> Sinon, si la tâche en cours est une autre tâche que la tâche cliquée :
-                *                               -> Lui supprimer la classe 'task-in-progress'
-                *                               -> Ajouter cette classe à la tâche cliquée
-                *                               -> Changer la valeur de tacheEnCours à TRUE
+                *               -> Lui supprimer la classe 'task-in-progress'
+                *               -> Changer la valeur de uneTacheEstEnCours à FALSE
+                * 
+                * -> Sinon, si uneTacheEstEnCours vaut TRUE ET si la tache courante ne contient pas la classe 'task-in-progress' :
+                *               -> Lui supprimer la classe 'task-in-progress'
+                *               -> Ajouter cette classe à la tâche cliquée
+                *               -> Changer la valeur de uneTacheEstEnCours à TRUE
                 */
 
-                if(tacheEnCours == undefined || tacheEnCours == false) {
+                if(uneTacheEstEnCours == undefined || uneTacheEstEnCours == false) {
+
+                        //console.log('Booléen phase 3 : ' + uneTacheEstEnCours)
 
                         tacheCourante.classList.add('task-in-progress');
-                        tacheEnCours = true;
-                        console.log(tacheEnCours)
+                        console.log(tacheCourante);
+                        // Donc une tâche est maintenant en cours
+                        uneTacheEstEnCours = true;
 
-                } else if(tacheEnCours == true) {
+                        //console.log('Booléen phase 4 : ' + uneTacheEstEnCours)
+
+                } else if(uneTacheEstEnCours == true) {
                         
-                        // Je récupère la tâche qui contient la classe "task-in-progress"
-                        let tacheDejaEnCours = document.querySelector('.task-in-progress');
-                        // Je supprime cette classe de cette tâche
-                        tacheDejaEnCours.classList.remove('task-in-progress')
-                        // Je passe la variable tacheEnCours à FALSE
-                        tacheEnCours = false;
+                        if(!tacheCourante.classList.contains('task-in-progress')){
+                                
+                                console.log('Booléen phase 6 : ' + uneTacheEstEnCours) 
+                                
+                                laTacheQuiEstDejaEnCours.classList.remove('task-in-progress');
+                                console.log(tacheCourante);
+                                tacheCourante.classList.add('task-in-progress');
+                                // Et le booléen reste à true puisqu'une autre tâche est cliquée
+
+                                console.log('Booléen phase 7 : ' + uneTacheEstEnCours);
+                        
+                        } else if(tacheCourante.classList.contains('task-in-progress')) {
+
+                                console.log('Booléen phase 8 : ' + uneTacheEstEnCours);
+                                console.log(tacheCourante)
+
+                                tacheCourante.classList.remove('task-in-progress');
+                                console.log('Booléen phase 9 : ' + uneTacheEstEnCours);
+                                // Ici, plus aucune tâche n 'est en cours, donc booléen sur false
+                                uneTacheEstEnCours = false;
+                        }
                 }
 
+                //console.log('Booléen phase 5 : ' + uneTacheEstEnCours)
         }
 
 
-
        //* Événement au clic sur un bouton de "tâche en cours"
-        tableauDesBoutonsEnCours.forEach(boutonDeTacheEnCours => {
-                boutonDeTacheEnCours.addEventListener('click', changerEtatDeLaTache, boutonDeTacheEnCours);
+        tableauDesBoutonsEnCours.forEach(boutonDeuneTacheEstEnCours => {
+                boutonDeuneTacheEstEnCours.addEventListener('click', changerEtatDeLaTache, boutonDeuneTacheEstEnCours);
         })
 }
