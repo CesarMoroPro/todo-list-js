@@ -1,5 +1,34 @@
 //^ MAIN */
 #main {
+
+        //= Mobile                                         
+        @include mobile {
+
+                width: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h2 {
+                        text-align: center;
+                }
+
+                #main__left {
+                        width: 100%;
+                        padding: 0;
+                        margin: 0 5px;
+                }
+
+                #main__right {
+                        width: 100%;
+                        padding: 0;
+                        margin: 0 5px;
+                }
+        } 
+
+
+        //= Desktop                                      
+
         background: rgb(209,237,247);
         background: $gradient3;
         display: flex;

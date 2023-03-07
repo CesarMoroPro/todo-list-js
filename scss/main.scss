@@ -1,10 +1,14 @@
 //! Import de fichiers scss
+//^ Utils
 @import "./utils/variables";
 @import "./utils/class-js";
 @import "./utils/heritage";
+@import "./utils/mixins";
 
+//^ Layouts
 @import "./pages/general-body";
 @import "./pages/homepage";
 
+//^ Page
 @import "./layouts/header";
 @import "./layouts/footer";

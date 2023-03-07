@@ -141,6 +141,7 @@ header #top__left .top-form__button .icon-contours:hover .icon, #main .one-task_
 }
 
 body {
+  min-width: 500px;
   margin: 0;
   width: 100%;
   font-family: "Raleway";
@@ -169,6 +170,27 @@ body h2 {
   display: flex;
   flex-direction: row;
   padding: 0 10px;
+}
+@media all and (max-width: 850px) {
+  #main {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #main h2 {
+    text-align: center;
+  }
+  #main #main__left {
+    width: 100%;
+    padding: 0;
+    margin: 0 5px;
+  }
+  #main #main__right {
+    width: 100%;
+    padding: 0;
+    margin: 0 5px;
+  }
 }
 #main h2 {
   color: #FF00FF;
