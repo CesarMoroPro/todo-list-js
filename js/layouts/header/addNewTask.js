@@ -7,7 +7,7 @@ export function ajouterUneNouvelletache() {
         //* Récupération des éléments utiles
         // Input d'ajout de tâche > Titre
         let inputTitreNouvelleTache = document.querySelector('#new-task-title');
-        // Input d'ajout de tâche > description
+        // Bouton ajouter une tâche
         let boutonAjouterNouvelleTache = document.querySelector('#new-task-add');
         // message d'erreur
         let alertMessage = document.querySelector('#alert-error-message');
@@ -149,15 +149,23 @@ export function ajouterUneNouvelletache() {
                                 // Récupérer la valeur de l'input description et remplacer la description d'une nouvelle tâche par cette nouvelle valeur
                                 let inputDescriptionNouvelleTache = document.querySelector('#new-task-excerpt');
                                 paramDescription.textContent = inputDescriptionNouvelleTache.value;
-                        }
+                        };
+
+                        // Le titre et la description d'une nouvelle tâche peuvent être vidés
+                        function viderLesInputs() {
+                                inputTitreNouvelleTache.value = "";
+                                document.querySelector('#new-task-excerpt').value= "";
+                        };
 
                         
-                        // Ici, je peux maintenant appeler les deux fonctions dans l'ordre.
+                        // Ici, je peux maintenant appeler les trois fonctions dans l'ordre.
                         insertNouvelleTache(nouvelleDivDeTache);
 
                         let titreARemplacer = nouvelleDivDeTache.querySelector('h3');
                         let descriptionARemplacer = nouvelleDivDeTache.querySelector('.description');
                         remplacerElementsDansLaTache(titreARemplacer, descriptionARemplacer);
+
+                        viderLesInputs();
                 }
 
 
