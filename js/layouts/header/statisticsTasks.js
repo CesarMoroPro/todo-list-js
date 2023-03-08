@@ -1,5 +1,5 @@
 export function statistiquesDesTachesDansLeHeader() {
-        //console.log('statisticsTasks.js >> statistiquesDesTachesDansLeHeader.js chargée');
+        // console.log('statisticsTasks.js >> statistiquesDesTachesDansLeHeader.js chargée');
 
         //* Récupération des éléments utiles
         // Emplacement du nombre total de tâches existantes

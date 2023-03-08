@@ -11,6 +11,8 @@ export function doneButtonFunction() {
         // Tous les boutons "tâche exécutée"
         let tableauDesBoutonsTacheExecutee = document.querySelectorAll('.executee');
 
+        //console.log(tableauDesBoutonsTacheExecutee);
+
         
         //* Fonctions de traitement pour les événements déclenchés
         function marquerLaTacheCommeExecutee(paramBoutonDeTacheExecutee) {
@@ -76,9 +78,4 @@ export function doneButtonFunction() {
         //* Je crée un événement
         // J'utilise la fonction créée dans les Utils JS
         startFunctionEventListenerOnTasksButtons(tableauDesBoutonsTacheExecutee, marquerLaTacheCommeExecutee);
-
-        // tableauDesBoutonsTacheExecutee.forEach(boutonDeLaTacheExecutee => {
-        //         // NOTE : l'élément retourné est un objet. Il faudra l'exploiter comme tel dans la fonction de traitement
-        //         boutonDeLaTacheExecutee. addEventListener('click', marquerLaTacheCommeExecutee, boutonDeLaTacheExecutee);
-        // })
 }
